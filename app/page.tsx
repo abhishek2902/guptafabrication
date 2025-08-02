@@ -1,13 +1,10 @@
 "use client";
-import Header from "@/components/Header"
-import Footer from "@/components/Footer"
-import ProductCard from "@/components/ProductCard"
-import { products } from "@/data/products"
-import { useState } from "react"
 import Head from 'next/head';
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
+import HeroHome from '@/components/HeroHome';
 
 export default function Home() {
-  const [showDrawer, setShowDrawer] = useState(false)
 
   return (<>
       <Head>
@@ -35,27 +32,12 @@ export default function Home() {
         />
       </Head>
       <main>
-    <div className="pt-[60px] pb-[60px]">
-      <Header onOpenDrawer={() => setShowDrawer(true)} />
-      {products.map(p => <ProductCard key={p.id} product={p} />)}
-      <Footer />
-
-      {/* Drawer */}
-      {showDrawer && (
-        <div className="fixed top-0 right-0 bg-gray-700 text-white h-[60vh] w-full transition z-50 overflow-scroll p-4">
-          <div className="flex justify-end">
-            <button onClick={() => setShowDrawer(false)}>X</button>
-          </div>
-          <img src="/banner.png" alt="banner" className="w-full my-2" />
-          <p className="font-bold">Favourite Designs</p>
-          {/* You can map localStorage favs here */}
-          <p className="mt-4">Contact: 8319962297</p>
-          <p>Address: Utaily, Maihar Road, Sonaura Mode</p>
-          <a href="#" className="underline">Open Map</a>
+        <div className="pt-[60px]">
+          <Navbar />
+          <HeroHome />
+          <Footer />
         </div>
-      )}
-    </div>
-    </main>
+      </main>
     </>
   )
 }
