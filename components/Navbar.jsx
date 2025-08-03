@@ -46,11 +46,11 @@ const Navbar = () => {
 							<span className="absolute bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 scale-x-0 group-active:scale-x-100 transition-transform origin-center duration-300 "></span>
 						</Link>
 						<Link
-							href="/ai"
+							href="/visualizer"
 							className="group mr-4 relative md:hidden block pb-2 px- tracking-wide text-white rounded-lg md:hover:bg-transparent transition-all duration-300"
 						>
 							<span className="group-hover:scale-105 transition-transform duration-300">
-								AI Chat
+								AI Gate Visualizer
 							</span>
 							<span className="absolute bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 scale-x-0 group-active:scale-x-100 transition-transform origin-center duration-300 "></span>
 						</Link>
@@ -105,7 +105,7 @@ const Navbar = () => {
               { name: "Boundary Gate Design", href: "/products" },
               { name: "All Design", href: "/products" },
               { name: "About", href: "/about" },
-              { name: "AI Chat", href: "/ai" },
+              { name: "AI Gate Visualizer", href: "/visualizer" },
               // { name: "Book Demo", href: "/book-demo" },
               // { name: "FAQ", href: "/faq" },
               { name: "Contact", href: "/contact" },

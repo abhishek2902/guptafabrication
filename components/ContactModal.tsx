@@ -207,10 +207,10 @@ export default function ContactModal({ isOpen, onClose }: { isOpen: boolean; onC
             <CheckCircle size={24} />
             <div>
               <p className="font-semibold">Message sent successfully!</p>
-              <p className="text-sm">We'll contact you within 24 hours.</p>
+              <p className="text-sm">We&apos;ll contact you within 24 hours.</p>
             </div>
           </div>
-        )}
+        )}+
       </div>
     </div>
   );
