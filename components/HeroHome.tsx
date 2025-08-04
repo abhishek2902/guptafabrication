@@ -82,7 +82,7 @@ export default function HeroHome() {
             Ready to Transform Your Space?
           </h2>
           <p className="text-xl text-slate-600 mb-8">
-            Let's discuss your project and bring your vision to life with our expert craftsmanship.
+            Let&apos;s discuss your project and bring your vision to life with our expert craftsmanship.
           </p>
           <div className='flex flex-col gap-4 items-center'>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
