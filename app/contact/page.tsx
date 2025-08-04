@@ -161,7 +161,7 @@ export default function ContactPage() {
                 <Check className="w-5" />
                 <div>
                   <p className="font-semibold">Message Sent Successfully!</p>
-                  <p className="text-sm">We'll get back to you within 24 hours.</p>
+                  <p className="text-sm">We&apos;ll get back to you within 24 hours.</p>
                 </div>
               </div>
             )}
