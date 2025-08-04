@@ -3,8 +3,13 @@ import React, { useState } from 'react';
 import GateShowcase from './GateShowcase';
 import Link from 'next/link';
 import ContactModal from './ContactModal';
-import { CompanyStory, CoreValues, ExpertiseShowcase, HeroSection, TeamSection, WhyChooseUs } from '@/app/about/page';
 import { Testimonials } from './Testimonials';
+import { HeroSection } from './HeroSection';
+import { CompanyStory } from './CompanyStory';
+import { CoreValues } from './CoreValues';
+import { ExpertiseShowcase } from './ExpertiseShowcase';
+import { TeamSection } from './TeamSection';
+import { WhyChooseUs } from './WhyChooseUs';
 
 export default function HeroHome() {
   const [contactOpen, setContactOpen] = useState(false);
