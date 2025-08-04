@@ -4,253 +4,77 @@ import {  useCallback, useState,useRef,useEffect } from 'react';
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
-const GATE_TEMPLATES = [
-  {
-    id: 'bdt-1',
-    name: 'Modern Grill Design',
-    category: 'Grill',
-    image: '/bdt/bdt.jpg',
-    size: { width: 80, height: 140 },
-    price: '₹15,000',
-    features: ['Powder Coated', 'Weather Resistant', 'Modern Design']
-  },
-  {
-    id: 'grill-1',
-    name: 'Modern Grill Design',
-    category: 'Grill',
-    image: '/bd/bd1.jpg',
-    size: { width: 80, height: 140 },
-    price: '₹15,000',
-    features: ['Powder Coated', 'Weather Resistant', 'Modern Design']
-  },
-  {
-    id: 'grill-2',
-    name: 'Classic Iron Grill',
-    category: 'Grill',
-    image: '/bd/bd2.jpeg',
-    size: { width: 85, height: 145 },
-    price: '₹18,000',
-    features: ['Hand Forged', 'Decorative', 'Rust Resistant']
-  },
-  {
-    id: 'grill-3',
-    name: 'Security Grill',
-    category: 'Grill',
-    image: '/bd/bd3.jpg',
-    size: { width: 90, height: 150 },
-    price: '₹22,000',
-    features: ['Heavy Duty', 'Anti-Climb', 'Reinforced']
-  },
-  {
-    id: 'grill-4',
-    name: 'Royal Grill Design',
-    category: 'Grill',
-    image: '/gr/g4.webp',
-    size: { width: 95, height: 155 },
-    price: '₹25,000',
-    features: ['Ornate Design', 'Premium Finish', 'Artistic']
-  },
-  {
-    id: 'grill-5',
-    name: 'Sleek Panel Grill',
-    category: 'Grill',
-    image: '/gr/g5.webp',
-    size: { width: 75, height: 135 },
-    price: '₹16,500',
-    features: ['Panel Design', 'Contemporary', 'Low Maintenance']
-  },
-  {
-    id: 'grill-6',
-    name: 'Double Entry Grill',
-    category: 'Grill',
-    image: '/gr/g6.webp',
-    size: { width: 160, height: 140 },
-    price: '₹35,000',
-    features: ['Wide Opening', 'Dual Panel', 'Grand Entrance']
-  },
-  {
-    id: 'grill-7',
-    name: 'Premium Grill',
-    category: 'Grill',
-    image: '/gr/g7.webp',
-    size: { width: 88, height: 148 },
-    price: '₹28,000',
-    features: ['Premium Quality', 'Custom Design', 'Long Lasting']
-  },
-  {
-    id: 'door-1',
-    name: 'Modern Door',
-    category: 'Door',
-    image: '/door/door1.webp',
-    size: { width: 90, height: 200 },
-    price: '₹45,000',
-    features: ['Modern Design', 'Durable', 'Weather Proof']
-  },
-  {
-    id: 'door-2',
-    name: 'Classic Door',
-    category: 'Door',
-    image: '/door/door2.jpg',
-    size: { width: 92, height: 205 },
-    price: '₹52,000',
-    features: ['Classic Style', 'Solid Construction', 'Elegant']
-  },
-  {
-    id: 'door-3',
-    name: 'Security Door',
-    category: 'Door',
-    image: '/door/door3.jpg',
-    size: { width: 95, height: 210 },
-    price: '₹65,000',
-    features: ['High Security', 'Reinforced', 'Anti-Break']
-  },
-  {
-    id: 'railing-1',
-    name: 'Modern Railing',
-    category: 'Railing',
-    image: '/railing/rail1.webp',
-    size: { width: 100, height: 120 },
-    price: '₹12,000',
-    features: ['Modern Look', 'Easy Install', 'Low Maintenance']
-  },
-  {
-    id: 'railing-2',
-    name: 'Classic Railing',
-    category: 'Railing',
-    image: '/railing/rail2.jpg',
-    size: { width: 105, height: 125 },
-    price: '₹15,000',
-    features: ['Traditional Design', 'Durable', 'Elegant']
-  },
-  {
-    id: 'railing-3',
-    name: 'Premium Railing',
-    category: 'Railing',
-    image: '/railing/rail3.jpg',
-    size: { width: 110, height: 130 },
-    price: '₹18,000',
-    features: ['Premium Finish', 'Custom Design', 'Long Lasting']
-  }
-];
+import { GATE_TEMPLATES  } from '@/data/products'; // adjust the path if needed
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState('upload');
   const [uploadedImage, setUploadedImage] = useState(null);
   const [aiCoordinates, setAiCoordinates] = useState([]);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
-  const [selectedTemplateType, setSelectedTemplateType] = useState(null);
+  const [selectedTemplateType, setSelectedTemplateType] = useState("straight");
 
   const generateAICoordinates = useCallback(() => {
     // Simulate AI-generated rectangle coordinates
     const coordinates = [
-      { id: 1, x: 30, y: 40, confidence: 0.95, type: 'top_left_corner' },
-      { id: 2, x: 70, y: 40, confidence: 0.92, type: 'top_right_corner' },
-      { id: 3, x: 70, y: 75, confidence: 0.89, type: 'bottom_right_corner' },
-      { id: 4, x: 30, y: 75, confidence: 0.91, type: 'bottom_left_corner' }
+      { id: 1, x: 30, y: 75, confidence: 0.95, type: 'top_left_corner' },
+      { id: 2, x: 70, y: 75, confidence: 0.92, type: 'top_right_corner' },
+      { id: 3, x: 70, y: 98, confidence: 0.89, type: 'bottom_right_corner' },
+      { id: 4, x: 30, y: 98, confidence: 0.91, type: 'bottom_left_corner' }
     ];
     setAiCoordinates(coordinates);
     setSelectedTemplate(GATE_TEMPLATES[0]);
   }, []);
 
-  // const handleFileUpload = useCallback(async (file) => {
-  //   if (!file.type.startsWith('image/')) {
-  //     alert('Please select a valid image file.');
-  //     return;
-  //   }
-
-  //   if (file.size > 10 * 1024 * 1024) {
-  //     alert('File size must be less than 10MB.');
-  //     return;
-  //   }
-
-  //   const reader = new FileReader();
-  //   reader.onload = (e) => {
-  //     setUploadedImage(e.target.result);
-  //     setCurrentStep('processing');
-      
-  //     // Simulate AI processing
-  //     // setTimeout(() => {
-  //     //   generateAICoordinates();
-  //     //   setCurrentStep('selection');
-  //     // }, 5000);
-  //   };
-  //   const formData = new FormData();
-  // formData.append("image", file);
-
-  // try {
-  //   const res = await fetch("/api/analyze-gate", { method: "POST", body: formData });
-  //   const data = await res.json();
-  //   console.log(data.coordinates)
-
-  //   if (data.type) {
-  //     // setSelectedTemplateType(data.type); // straight / circular
-  //     setCurrentStep('selection');
-  //     setSelectedTemplate(GATE_TEMPLATES[0]);
-  //     setAiCoordinates(data.coordinates);
-  //   } else {
-  //     alert("Unexpected AI response");
-  //     console.error(data);
-  //   }
-  // } catch (err) {
-  //   alert("AI request failed");
-  //   console.error(err);
-  // }
-
-
-  //   reader.readAsDataURL(file);
-  // }, [generateAICoordinates]);
-
   const handleFileUpload = useCallback(async (file) => {
-  if (!file.type.startsWith('image/')) {
-    alert('Please select a valid image file.');
-    return;
-  }
-
-  if (file.size > 10 * 1024 * 1024) {
-    alert('File size must be less than 10MB.');
-    return;
-  }
-
-  // Show preview immediately
-  setUploadedImage(URL.createObjectURL(file));
-  setCurrentStep('processing');
-
-  // Send to backend API
-  const formData = new FormData();
-  formData.append("image", file);
-
-  try {
-    const res = await fetch("/api/analyze-gate", {
-      method: "POST",
-      body: formData
-    });
-
-    if (!res.ok) throw new Error(`API returned ${res.status}`);
-
-    const data = await res.json();
-    console.log("AI Response:", data);
-
-    if (data.type && Array.isArray(data.coordinates)) {
-      setAiCoordinates(data.coordinates);
-      setCurrentStep('selection');
-      setSelectedTemplate(GATE_TEMPLATES[0]);
-      // setSelectedTemplateType(data.type); // enable later if you have filtering
-    } else {
-      alert("Unexpected AI response format");
-      console.error(data);
+    if (!file.type.startsWith('image/')) {
+      alert('Please select a valid image file.');
+      return;
     }
-  } catch (err) {
-    alert("AI request failed");
-    console.error(err);
-  }
-}, []);
+
+    if (file.size > 10 * 1024 * 1024) {
+      alert('File size must be less than 10MB.');
+      return;
+    }
+
+    // Show preview immediately
+    setUploadedImage(URL.createObjectURL(file));
+    setCurrentStep('processing');
+
+    // Send to backend API
+    const formData = new FormData();
+    formData.append("image", file);
+
+    try {
+      const res = await fetch("/api/analyze-gate", {
+        method: "POST",
+        body: formData
+      });
+
+      if (!res.ok) throw new Error(`API returned ${res.status}`);
+
+      const data = await res.json();
+
+      if (data.type && Array.isArray(data.coordinates)) {
+        setAiCoordinates(data.coordinates);
+        setCurrentStep('selection');
+        const matchingTemplate = GATE_TEMPLATES.find(
+          (template) => template.templateType?.toLowerCase() === data.type.toLowerCase()
+        );
+        setSelectedTemplate(matchingTemplate || GATE_TEMPLATES[0]);
+        setSelectedTemplateType(data.type); // enable later if you have filtering
+      } else {
+        generateAICoordinates();
+        setCurrentStep('selection');
+      }
+    } catch (err) {
+      generateAICoordinates();
+      setCurrentStep('selection');
+    }
+  }, []);
 
 
   const updateCoordinate = useCallback((id, x, y) => {
-    // console.log('updateCoordinate called:', { id, x, y });
     setAiCoordinates(prev => {
-      // console.log('Previous coordinates:', prev);
       const updatedCoords = [...prev];
       const draggedIndex = updatedCoords.findIndex(coord => coord.id === id);
       
@@ -317,8 +141,6 @@ export default function Home() {
         updatedCoords.find(coord => coord.id === 3).x = x;
         updatedCoords.find(coord => coord.id === 3).y = oppositeCorner.y;
       }
-      
-      // console.log('Updated coordinates:', updatedCoords);
       return updatedCoords;
     });
   }, []);
@@ -374,16 +196,57 @@ export default function Home() {
         ctx.drawImage(gateImg, gateX, gateY, gateWidth, gateHeight);
         
         // Add a subtle border around the gate area
-        ctx.strokeStyle = '#22c55e';
-        ctx.lineWidth = 3;
-        ctx.strokeRect(gateX, gateY, gateWidth, gateHeight);
+        // ctx.strokeStyle = '#22c55e';
+        // ctx.lineWidth = 3;
+        // ctx.strokeRect(gateX, gateY, gateWidth, gateHeight);
+
+        // Calculate the center position of the gate area
+        const centerX = houseImg.naturalWidth / 2;
+        const centerY = houseImg.naturalHeight / 2;
+
+        // Draw a semi-transparent rounded background
+        const bgWidth = 160;
+        const bgHeight = 50;
+        const bgX = centerX - bgWidth / 2;
+        const bgY = centerY - bgHeight / 2;
+
+        // Rounded rectangle function
+        function roundRect(ctx, x, y, width, height, radius) {
+          ctx.beginPath();
+          ctx.moveTo(x + radius, y);
+          ctx.lineTo(x + width - radius, y);
+          ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+          ctx.lineTo(x + width, y + height - radius);
+          ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+          ctx.lineTo(x + radius, y + height);
+          ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+          ctx.lineTo(x, y + radius);
+          ctx.quadraticCurveTo(x, y, x + radius, y);
+          ctx.closePath();
+        }
+
+        ctx.fillStyle = "rgba(255, 255, 255, 0.75)";
+        ctx.shadowColor = "rgba(34, 197, 94, 0.4)";
+        ctx.shadowBlur = 10;
+        roundRect(ctx, bgX, bgY, bgWidth, bgHeight+10, 12);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        // Draw model name at the center
+        ctx.font = "italic 18px Arial";      // Small, readable text
+        ctx.fillStyle = "#2a2a2b";         //  text color
+        ctx.textAlign = "center";          // Center align horizontally
+        ctx.textBaseline = "middle";       // Center align vertically
+        ctx.fillText(`Model ${selectedTemplate.model}`, centerX, centerY);
+        ctx.font = "italic 12px Arial";
+        ctx.fillStyle = "#374151";
+        ctx.fillText("(Generated with AI ✅)", centerX, centerY+15);
         
         // Convert canvas to blob and download
         canvas.toBlob((blob) => {
           const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;
-          a.download = `house-with-${selectedTemplate.name.toLowerCase().replace(/\s+/g, '-')}.png`;
+          a.download = `house-with-${selectedTemplate.model.toLowerCase().replace(/\s+/g, '-')}.png`;
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
@@ -440,6 +303,8 @@ export default function Home() {
               onBackToUpload={() => setCurrentStep('upload')}
               onDownloadImage={downloadImageWithGate}
               isDownloading={isDownloading}
+              selectedTemplateType={selectedTemplateType}
+              setSelectedTemplateType={setSelectedTemplateType}
             />
           )}
         </main>
@@ -492,7 +357,7 @@ function UploadSection({ onFileUpload }) {
             🏠 Upload Your House Image
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
-            Let our AI analyze your house and suggest the perfect gate designs that will enhance your property's beauty and security
+            Let our AI analyze your house and suggest the perfect gate designs that will enhance your property&apos;s beauty and security
           </p>
         </div>
         
@@ -504,7 +369,7 @@ function UploadSection({ onFileUpload }) {
           onDrop={handleDrop}
         >
           <div className="space-y-6">
-            <div className="text-6xl sm:text-7xl lg:text-8xl group-hover:scale-110 transition-transform duration-300">🏠</div>
+            <div className="text-6xl sm:text-7xl lg:text-8xl group-hover:scale-110 transition-transform duration-300">🏠📸</div>
             <div className="space-y-3">
               <p className="text-lg sm:text-xl font-semibold text-gray-700">
                 Click to upload or drag and drop
@@ -517,9 +382,9 @@ function UploadSection({ onFileUpload }) {
                 <span>Secure & private</span>
               </div>
             </div>
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-2 mx-auto">
-              <span className="text-lg">📁</span>
-              Choose File
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-3 md:px-8 py-2 md:py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-1 md:gap-2 mx-auto">
+              <span className="text-lg pb-1">📸</span>
+              Add home image
             </button>
           </div>
         </div>
@@ -546,6 +411,7 @@ function UploadSection({ onFileUpload }) {
           ref={fileInputRef}
           type="file"
           accept="image/*"
+          capture="environment"
           className="hidden"
           onChange={handleFileChange}
         />
@@ -685,7 +551,9 @@ function GateSelectionSection({
   onTemplateSelect,
   onBackToUpload,
   onDownloadImage,
-  isDownloading
+  isDownloading,
+  selectedTemplateType,
+  setSelectedTemplateType
 }) {
   const imageContainerRef = useRef(null);
 
@@ -720,6 +588,7 @@ function GateSelectionSection({
             
             <div className="border-2 border-gray-200 rounded-xl p-4 bg-gradient-to-br from-gray-50 to-gray-100 shadow-inner">
               <div ref={imageContainerRef} className="relative inline-block max-w-full" style={{ touchAction: 'none' }}>
+                <FlashTip />
                 <img
                   src={uploadedImage}
                   alt="Uploaded house"
@@ -785,6 +654,8 @@ function GateSelectionSection({
               selectedTemplate={selectedTemplate}
               onTemplateSelect={onTemplateSelect}
               aiCoordinates={aiCoordinates}
+              selectedTemplateType={selectedTemplateType}
+              setSelectedTemplateType={setSelectedTemplateType}
             />
           </div>
         </div>
@@ -797,7 +668,6 @@ function GateSelectionSection({
 function DraggableMarker({ coordinate, containerRef, onUpdate }) {
   const [isDragging, setIsDragging] = useState(false);
   const handleTouchStart = useCallback((e) => {
-    // console.log('Touch start detected for marker:', coordinate.id);
     
     // Use a more mobile-friendly approach
     if (e.touches && e.touches.length > 0) {
@@ -807,8 +677,6 @@ function DraggableMarker({ coordinate, containerRef, onUpdate }) {
       if (!container) return;
 
       const rect = container.getBoundingClientRect();
-      const startX = touch.clientX - rect.left;
-      const startY = touch.clientY - rect.top;
       
       const handleTouchMove = (e) => {
         if (e.touches.length === 0) return;
@@ -825,7 +693,6 @@ function DraggableMarker({ coordinate, containerRef, onUpdate }) {
         const xPercent = (constrainedX / rect.width) * 100;
         const yPercent = (constrainedY / rect.height) * 100;
         
-        // console.log('Touch move:', { id: coordinate.id, x: xPercent, y: yPercent });
         onUpdate(coordinate.id, xPercent, yPercent);
       };
 
@@ -899,7 +766,6 @@ function DraggableMarker({ coordinate, containerRef, onUpdate }) {
       }}
       onMouseDown={handleTouchStart}
       onTouchStart={handleTouchStart}
-      // onClick={() => console.log('Marker clicked:', coordinate.id)}
       title={`${coordinate.type.replace('_', ' ')} (${Math.round(coordinate.confidence * 100)}% confidence) - Drag to adjust`}
     >
       {coordinate.id}
@@ -939,7 +805,7 @@ function GateTemplate({ template, bounds }) {
 }
 
 // components/GateGallery.js
-function GateGallery({ templates, selectedTemplate, onTemplateSelect, aiCoordinates }) {
+function GateGallery({ templates, selectedTemplate, onTemplateSelect,selectedTemplateType,setSelectedTemplateType }) {
   return (
     <>
       <h3 className="mt-5 text-base sm:text-lg font-semibold text-gray-700 mb-1 sm:mb-2">Select Gate Template</h3>
@@ -947,14 +813,15 @@ function GateGallery({ templates, selectedTemplate, onTemplateSelect, aiCoordina
       {/* Category Filter */}
       <div className="mb-0 sm:mb-0">
         <div className="flex flex-wrap gap-1 sm:gap-2">
-          {['All', 'Grill', 'Door', 'Railing'].map(category => (
+          {['All', 'Pipe', 'Iron', 'Castiron'].map(category => (
             <button
               key={category}
+              onClick={() => setSelectedTemplateType(category)} // set selected type
               className="px-2 sm:px-3 py-1 text-xs font-medium rounded-full border transition-colors"
               style={{
-                backgroundColor: category === 'All' ? '#3b82f6' : '#f3f4f6',
-                color: category === 'All' ? 'white' : '#374151',
-                borderColor: category === 'All' ? '#3b82f6' : '#d1d5db'
+                backgroundColor: selectedTemplateType === category ? '#3b82f6' : '#f3f4f6',
+                color: selectedTemplateType === category ? 'white' : '#374151',
+                borderColor: selectedTemplateType === category ? '#3b82f6' : '#d1d5db',
               }}
             >
               {category}
@@ -1014,6 +881,7 @@ function GateGallery({ templates, selectedTemplate, onTemplateSelect, aiCoordina
                 <p className="text-blue-700"><span className="font-medium">Category:</span> {selectedTemplate.category}</p>
                 <p className="text-blue-700"><span className="font-medium">Price:</span> {selectedTemplate.price}</p>
                 <p className="text-blue-700"><span className="font-medium">Size:</span> {selectedTemplate.size.width}cm × {selectedTemplate.size.height}cm</p>
+                <p className="text-blue-700"><span className="font-medium">Type:</span> {selectedTemplate.templateType}</p>
               </div>
             </div>
             <div>
@@ -1031,5 +899,52 @@ function GateGallery({ templates, selectedTemplate, onTemplateSelect, aiCoordina
         </div>
       )}
     </>
+  );
+}
+
+function FlashTip() {
+  const messages = [
+    "💡 Tip: Drag the blue corner markers to adjust the gate area for a perfect fit.",
+    "💡 सुझाव: सही फिटिंग के लिए नीले कोनों को खींचकर गेट का साइज़ एडजस्ट करें।"
+  ];
+
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  const [show, setShow] = useState(true);
+  const [hideForever, setHideForever] = useState(false);
+
+  useEffect(() => {
+    let shownCount = 0;
+
+    const interval = setInterval(() => {
+      shownCount++;
+      if (shownCount >= messages.length) {
+        // After showing both messages → hide permanently
+        clearInterval(interval);
+        setTimeout(() => setHideForever(true), 2000); // wait for last fade
+      } else {
+        // Show next message
+        setShow(false); // fade out
+        setTimeout(() => {
+          setCurrentMessageIndex((prev) => (prev === 0 ? 1 : 0));
+          setShow(true); // fade in
+        }, 300);
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  if (hideForever) return null;
+
+  return (
+    <div
+      className={`absolute transition-all duration-500 ${
+        show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
+      } p-2 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg border border-yellow-300 shadow-md text-center`}
+    >
+      <p className="text-xs text-yellow-800 font-medium">
+        {messages[currentMessageIndex]}
+      </p>
+    </div>
   );
 }

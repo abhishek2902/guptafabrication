@@ -2,14 +2,22 @@
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import {
-  Phone, Mail, MapPin, Clock, Check, Loader2, ArrowRight, Wrench, Handshake, Factory, User,
+  Phone, Mail, MapPin, Clock, Check, Loader2, ArrowRight, Wrench, Handshake, User,
   X
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 // Helper: InfoCard for reusability
-function InfoCard({ icon, color, title, value, desc }: { icon: any, color: string, title: string, value: string, desc?: string }) {
+type InfoCardProps = {
+  icon: React.ReactNode;
+  color: string;
+  title: string;
+  value: string;
+  desc?: string;
+};
+
+function InfoCard({ icon, color, title, value, desc }: InfoCardProps) {
   return (
     <div className="bg-white/90 p-6 rounded-2xl shadow-lg border border-amber-300 hover:shadow-2xl transition card-hover flex items-start gap-4">
       <span className={`p-4 rounded-xl text-white ${color} shadow`}>{icon}</span>
@@ -55,7 +63,7 @@ export default function ContactPage() {
             <span className="ml-2 font-black text-amber-400">Gupta Fabrication</span> team
           </h2>
           <p className="text-lg text-slate-200 max-w-xl mx-auto mb-8 leading-tight">
-            Let's build something strong, beautiful, and reliable together. For expert metalwork, quotes, or questions, contact us now.
+            Let&apos;s build something strong, beautiful, and reliable together. For expert metalwork, quotes, or questions, contact us now.
           </p>
           <div className="flex text-white flex-wrap justify-center gap-6 text-base font-semibold">
             <div className="flex items-center gap-2"><Phone className="text-amber-400 w-5" />Quick Response</div>
@@ -72,7 +80,7 @@ export default function ContactPage() {
           <div className="space-y-7">
             {/* Contact Cards */}
             <InfoCard icon={<Phone />} color="bg-blue-700" title="Phone Number" value="+91 9340059307" desc="Call Mon-Sat, 8AM-7PM" />
-            <InfoCard icon={<Mail />} color="bg-teal-600" title="Email" value="arumsteels@gmail.com" desc="We'll respond within 24 hours" />
+            <InfoCard icon={<Mail />} color="bg-teal-600" title="Email" value="arumsteels@gmail.com" desc="We&apos;ll respond within 24 hours" />
             <InfoCard icon={<MapPin />} color="bg-violet-600" title="Workshop" value="1HV54+4X8, Maihar Bypass Rd, Delaura,Utaily, Tikuria Tola, Satna, Madhya Pradesh" />
             <InfoCard icon={<Clock />} color="bg-gradient-to-r from-amber-500 to-yellow-600" title="Working Hours" value="Mon-Sat: 8AM-7PM | Sun: 10AM-4PM" />
             {/* Specialties */}
@@ -91,7 +99,7 @@ export default function ContactPage() {
           <div className="bg-white/95 border border-amber-200 p-8 rounded-2xl shadow-xl card-hover">
             <div className="mb-6">
               <h3 className="text-2xl font-extrabold text-slate-800 mb-2">Send Us a Message</h3>
-              <p className="text-slate-600">Fill out the form and we'll get back to you ASAP.</p>
+              <p className="text-slate-600">Fill out the form and we&apos;ll get back to you ASAP.</p>
             </div>
             <form ref={form} onSubmit={sendEmail} className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">

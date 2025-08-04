@@ -34,54 +34,54 @@ const Navbar = () => {
           <img src="/gflogo.png" className="h-10" alt="Gupta Fabrication Logo" />
         </Link>
 
-				<div className="flex text-xs items-end md:space-x-8 md:mt-0 font-sm text-white">				
-					{!isOpen && <>
-						<Link
-							href="/products"
-							className="group mr-4 relative md:hidden block pb-2 px- tracking-wide text-white rounded-lg md:hover:bg-transparent transition-all duration-300"
-						>
-							<span className="group-hover:scale-105 transition-transform duration-300">
-								Gate design
-							</span>
-							<span className="absolute bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 scale-x-0 group-active:scale-x-100 transition-transform origin-center duration-300 "></span>
-						</Link>
-						<Link
-							href="/visualizer"
-							className="group mr-4 relative md:hidden block pb-2 px- tracking-wide text-white rounded-lg md:hover:bg-transparent transition-all duration-300"
-						>
-							<span className="group-hover:scale-105 transition-transform duration-300">
-								AI Gate Visualizer
-							</span>
-							<span className="absolute bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 scale-x-0 group-active:scale-x-100 transition-transform origin-center duration-300 "></span>
-						</Link>
-						<Link
-							href="/contact"
-							className="group mr-2 relative md:hidden block pb-2 px- tracking-wide text-white rounded-lg md:hover:bg-transparent transition-all duration-300"
-						>
-							<span className="group-hover:scale-105 transition-transform duration-300">
-								Contact
-							</span>
-							<span className="absolute bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 scale-x-0 group-active:scale-x-100 transition-transform origin-center duration-300 "></span>
-						</Link>
-						</>
-					}
-					{/* Mobile Menu Toggle */}
-					<button
-						onClick={() => setIsOpen(!isOpen)}
-						type="button"
-						className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-100 rounded-lg md:hidden transition-all"
-						aria-controls="navbar-menu"
-						aria-expanded={isOpen}
-					>
-						{isOpen ? (
-							<span></span>
-						) : (
-							<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 17 14">
-								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
-							</svg>
-						)}
-					</button>
-				</div>
+		<div className="flex text-xs items-end md:space-x-8 md:mt-0 font-sm text-white">
+			{!isOpen && <>
+				<Link
+					href="/products"
+					className="group mr-3 relative md:hidden block pb-2 px- tracking-wide text-white rounded-lg md:hover:bg-transparent transition-all duration-300"
+				>
+					<span className="group-hover:scale-105 transition-transform duration-300">
+						Gate Design
+					</span>
+					<span className="absolute bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 scale-x-0 group-active:scale-x-100 transition-transform origin-center duration-300 "></span>
+				</Link>
+				<Link
+					href="/visualizer"
+					className="group mr-3 relative md:hidden block pb-2 px- tracking-wide text-white rounded-lg md:hover:bg-transparent transition-all duration-300"
+				>
+					<span className="group-hover:scale-105 transition-transform duration-300">
+						AI Gate Visualizer
+					</span>
+					<span className="absolute bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 scale-x-0 group-active:scale-x-100 transition-transform origin-center duration-300 "></span>
+				</Link>
+				<Link
+					href="/contact"
+					className="group mr- relative md:hidden block pb-2 px- tracking-wide text-white rounded-lg md:hover:bg-transparent transition-all duration-300"
+				>
+					<span className="group-hover:scale-105 transition-transform duration-300">
+						Contact
+					</span>
+					<span className="absolute bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 scale-x-0 group-active:scale-x-100 transition-transform origin-center duration-300 "></span>
+				</Link>
+				</>
+			}
+			{/* Mobile Menu Toggle */}
+			<button
+				onClick={() => setIsOpen(!isOpen)}
+				type="button"
+				className="inline-flex items-center p-2 w-9 h-10 justify-center text-gray-100 rounded-lg md:hidden transition-all"
+				aria-controls="navbar-menu"
+				aria-expanded={isOpen}
+			>
+				{isOpen ? (
+					<span></span>
+				) : (
+					<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 17 14">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
+					</svg>
+				)}
+			</button>
+		</div>
 
         {/* Menu Items */}
         <div

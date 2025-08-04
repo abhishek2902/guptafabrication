@@ -3,42 +3,12 @@ import React, { useState } from 'react';
 import GateShowcase from './GateShowcase';
 import Link from 'next/link';
 import ContactModal from './ContactModal';
-
-// You can extract Navbar as in previous answers or use this minimal hero-level navbar:
-function SimpleNavbar() {
-  return (
-    <nav 
-      className="bg-gradient-to-r from-slate-900 to-slate-800 shadow-2xl fixed w-full top-0 z-50 border-b border-amber-500/20"
-      >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">⚡ Gupta Fabrication</div>
-          </div>
-          <div className="hidden md:flex space-x-8">
-            <a href="#home" className="text-slate-300 hover:text-amber-400 font-medium transition-colors">Home</a>
-            <a href="#services" className="text-slate-300 hover:text-amber-400 font-medium transition-colors">Services</a>
-            <a href="#gallery" className="text-slate-300 hover:text-amber-400 font-medium transition-colors">Gallery</a>
-            <a href="#contact" className="text-slate-300 hover:text-amber-400 font-medium transition-colors">Contact</a>
-          </div>
-          <button
-            className="bg-gradient-to-r from-amber-500 to-yellow-600 text-slate-900 px-6 py-2 rounded-lg hover:from-amber-400 hover:to-yellow-500 transition-all font-semibold shadow-lg"
-            onClick={() => alert('Thank you for your interest! Please call us at +91-XXXXX-XXXXX or WhatsApp for immediate assistance.')}
-          >
-            Get Quote
-          </button>
-        </div>
-      </div>
-    </nav>
-  );
-}
+import { CompanyStory, CoreValues, ExpertiseShowcase, HeroSection, TeamSection, Testimonials, WhyChooseUs } from '@/app/about/page';
 
 export default function HeroHome() {
   const [contactOpen, setContactOpen] = useState(false);
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* <SimpleNavbar /> */}
-
       {/* HERO */}
       <section id="home" className="hero-gradient min-h-screen flex items-center pt-0 md:pt-16 relative"
         style={{
@@ -127,6 +97,14 @@ export default function HeroHome() {
           </div>
         </div>
       </section>
+      <HeroSection/>
+      <CompanyStory/>
+      <CoreValues/>
+      <ExpertiseShowcase/>
+      <TeamSection/>
+      <WhyChooseUs />
+      <Testimonials />
+      
       <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
       {/* Utility Styles (for animation/pulse-glow used in demo) */}
       <style>{`

@@ -108,7 +108,7 @@ export default function Footer() {
                 </div>
               </div>
               <p className="text-slate-300 text-lg mb-6 leading-relaxed">
-                Crafting premium metal gates, railings, and custom fabrication solutions with over 15 years of expertise.
+                Crafting premium metal gates, railings, and custom fabrication solutions with over 25 years of expertise.
                 Your trusted partner for exceptional metalwork that combines artistry with functionality.
               </p>
               <div className="flex space-x-4">

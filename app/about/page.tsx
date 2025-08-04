@@ -24,7 +24,6 @@ import Navbar from '@/components/Navbar';
 export default function AboutPage() {
   return (
     <main className="bg-gray-50 min-h-screen font-sans">
-      {/* <Header /> */}
       <Navbar/>
 
       <HeroSection />
@@ -48,43 +47,7 @@ export default function AboutPage() {
   );
 }
 
-// function Header() {
-//   return (
-//     <header className="bg-white shadow-lg sticky top-0 z-50">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="flex justify-between items-center py-4">
-//           <div className="flex items-center gap-3">
-//             <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-xl">
-//               <Factory size={32} />
-//             </div>
-//             <div>
-//               <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-//                 Gupta Fabrication
-//               </h1>
-//               <p className="text-gray-600 text-sm">Excellence in Metal Fabrication</p>
-//             </div>
-//           </div>
-//           <nav className="hidden md:flex space-x-8">
-//             <a href="/" className="text-gray-700 hover:text-orange-600 font-medium transition-colors">
-//               Home
-//             </a>
-//             <a href="/services" className="text-gray-700 hover:text-orange-600 font-medium transition-colors">
-//               Services
-//             </a>
-//             <a href="/about" className="text-orange-600 font-bold">
-//               About
-//             </a>
-//             <a href="/contact" className="text-gray-700 hover:text-orange-600 font-medium transition-colors">
-//               Contact
-//             </a>
-//           </nav>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// }
-
-function HeroSection() {
+export function HeroSection() {
   return (
     <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 pt-40 relative overflow-hidden hero-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,7 +57,7 @@ function HeroSection() {
               About <span className="text-orange-400">Gupta Fabrication</span>
             </h2>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              For over two decades, we've been crafting excellence in metal fabrication. From humble beginnings to a trusted name in the industry, our journey is built on quality, innovation, and unwavering commitment to our clients.
+              For over two decades, we&apos;ve been crafting excellence in metal fabrication. From humble beginnings to a trusted name in the industry, our journey is built on quality, innovation, and unwavering commitment to our clients.
             </p>
             <div className="flex flex-wrap gap-6">
               <CounterCard number={25} label="Years Experience" />
@@ -156,7 +119,7 @@ function InfoCard({ icon, title, subtitle }: { icon: React.ReactNode; title: str
   );
 }
 
-function CompanyStory() {
+export function CompanyStory() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
@@ -173,7 +136,7 @@ function CompanyStory() {
               Founded in 1999 by Mr. Kamta Gupta, our company started as a small family business with a simple vision: to provide high-quality metal fabrication services with integrity and craftsmanship. What began in a modest 500 sq ft workshop has grown into a state-of-the-art facility spanning over 10,000 sq ft.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Our founder's passion in mechanical engineering and metalwork laid the foundation for what would become one of Satna's most trusted fabrication companies. Every project, no matter how small, was treated with the same dedication and attention to detail.
+              Our founder&apos;s passion in mechanical engineering and metalwork laid the foundation for what would become one of Satna&apos;s most trusted fabrication companies. Every project, no matter how small, was treated with the same dedication and attention to detail.
             </p>
           </div>
         </div>
@@ -213,7 +176,7 @@ function Timeline() {
   );
 }
 
-function CoreValues() {
+export function CoreValues() {
   const values = [
     { icon: <Award size={48} />, title: 'Quality Excellence', desc: 'We never compromise on quality. Every project meets the highest standards of craftsmanship and durability.', from: 'blue-500', to: 'indigo-500' },
     { icon: <Handshake size={48} />, title: 'Integrity', desc: 'Honest communication, transparent pricing, and ethical business practices form the foundation of our relationships.', from: 'green-500', to: 'emerald-500' },
@@ -244,7 +207,7 @@ function CoreValues() {
   );
 }
 
-function ExpertiseShowcase() {
+export function ExpertiseShowcase() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
@@ -344,7 +307,7 @@ function ServiceCard({
   );
 }
 
-function TeamSection() {
+export function TeamSection() {
   const team = [
     {
       name: 'Kamta Gupta',
@@ -473,7 +436,7 @@ function TeamSection() {
   );
 }
 
-function WhyChooseUs() {
+export function WhyChooseUs() {
   const reasons = [
     {
       icon: <Clock size={40} className="text-orange-500" />,
@@ -576,7 +539,7 @@ function TrustedBadge({ label }: { label: string }) {
   );
 }
 
-function Testimonials() {
+export function Testimonials() {
   const testimonials = [
     {
       name: 'Manoj Kumar',
@@ -615,7 +578,7 @@ function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
         <h3 className="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h3>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Don't just take our word for it. Here's what our satisfied clients say about us.
+          Don&apos;t just take our word for it. Here&apos;s what our satisfied clients say about us.
         </p>
       </div>
 
@@ -664,7 +627,7 @@ function TestimonialCard({
         </div>
         <span className="ml-2 text-gray-600 text-sm">({rating.toFixed(1)})</span>
       </div>
-      <p className="text-gray-700 mb-6 italic">"{review}"</p>
+      <p className="text-gray-700 mb-6 italic">&quot;{review}&quot;</p>
       <div className="flex items-center">
         <div
           className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg bg-gradient-to-r from-${colorFrom} to-${colorTo}`}
@@ -688,7 +651,7 @@ function CallToAction() {
           Ready to Start Your <span className="text-orange-400">Next Project?</span>
         </h3>
         <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-          Let's discuss your metal fabrication needs and create something extraordinary together. Get in touch with our expert team today.
+          Let&apos;s discuss your metal fabrication needs and create something extraordinary together. Get in touch with our expert team today.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -708,63 +671,3 @@ function CallToAction() {
     </section>
   );
 }
-
-// function Footer() {
-//   return (
-//     <footer className="bg-gray-900 text-white py-12">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
-//         <div>
-//           <div className="flex items-center gap-3 mb-4">
-//             <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-2 rounded-lg">
-//               <Factory size={24} />
-//             </div>
-//             <h4 className="text-xl font-bold">Gupta Fabrication</h4>
-//           </div>
-//           <p className="text-gray-400 mb-4">
-//             Excellence in metal fabrication for over 25 years. Your trusted partner for quality craftsmanship.
-//           </p>
-//           <div className="flex space-x-4">
-//             <a href="#" className="bg-gray-800 hover:bg-orange-600 p-3 rounded-lg transition-colors" aria-label="Facebook">
-//               <Facebook size={20} />
-//             </a>
-//             <a href="#" className="bg-gray-800 hover:bg-orange-600 p-3 rounded-lg transition-colors" aria-label="Instagram">
-//               <Instagram size={20} />
-//             </a>
-//             <a href="#" className="bg-gray-800 hover:bg-orange-600 p-3 rounded-lg transition-colors" aria-label="LinkedIn">
-//               <Linkedin size={20} />
-//             </a>
-//           </div>
-//         </div>
-//         <div>
-//           <h5 className="text-lg font-semibold mb-4">Services</h5>
-//           <ul className="space-y-2 text-gray-400">
-//             <li><a href="/custom-fabrication" className="hover:text-orange-400 transition-colors">Custom Fabrication</a></li>
-//             <li><a href="/welding-services" className="hover:text-orange-400 transition-colors">Welding Services</a></li>
-//             <li><a href="/metal-cutting" className="hover:text-orange-400 transition-colors">Metal Cutting</a></li>
-//             <li><a href="/structural-work" className="hover:text-orange-400 transition-colors">Structural Work</a></li>
-//           </ul>
-//         </div>
-//         <div>
-//           <h5 className="text-lg font-semibold mb-4">Company</h5>
-//           <ul className="space-y-2 text-gray-400">
-//             <li><a href="/about" className="hover:text-orange-400 transition-colors">About Us</a></li>
-//             <li><a href="/team" className="hover:text-orange-400 transition-colors">Our Team</a></li>
-//             <li><a href="/careers" className="hover:text-orange-400 transition-colors">Careers</a></li>
-//             <li><a href="/news" className="hover:text-orange-400 transition-colors">News</a></li>
-//           </ul>
-//         </div>
-//         <div>
-//           <h5 className="text-lg font-semibold mb-4">Contact Info</h5>
-//           <div className="space-y-3 text-gray-400">
-//             <p className="flex items-center gap-2"><Phone className="w-4" /> +91 98765 43210</p>
-//             <p className="flex items-center gap-2"><Mail className="w-4" /> info@guptafabrication.com</p>
-//             <p className="flex items-center gap-2"><MapPin className="w-4" /> New Delhi, India</p>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-//         <p>© 2024 Gupta Fabrication. All rights reserved.</p>
-//       </div>
-//     </footer>
-//   );
-// }

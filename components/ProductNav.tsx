@@ -1,8 +1,6 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { FaThumbsUp } from 'react-icons/fa';
 
 type ProductNavProps = {
   onCategory: (id: string) => void;
@@ -34,7 +32,7 @@ const BOTTOM_CATEGORIES = [
   { id: 'favid', name: 'Liked', icon: "👍🏻" },
 ];
 
-export default function ProductNav({ onCategory, activeCategory = null, isTop = true, className = '',fullscreen=true }: ProductNavProps) {
+export default function ProductNav({ onCategory, activeCategory = null, isTop = true, fullscreen=true }: ProductNavProps) {
   const categories = isTop ? (fullscreen?FULL_CATEGORIES:TOP_CATEGORIES) : BOTTOM_CATEGORIES;
 
   return (

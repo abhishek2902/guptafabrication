@@ -49,7 +49,7 @@ export default function ContactModal({ isOpen, onClose }: { isOpen: boolean; onC
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
-    let fieldErrors: { name?: string; phone?: string } = {};
+    const fieldErrors: { name?: string; phone?: string } = {};
 
     if (!formData.name.trim()) fieldErrors.name = "Name is required";
     if (!/^\d{10,}$/.test(formData.phone.replace(/\D/g, "")))
@@ -210,25 +210,18 @@ export default function ContactModal({ isOpen, onClose }: { isOpen: boolean; onC
               <p className="text-sm">We&apos;ll contact you within 24 hours.</p>
             </div>
           </div>
-        )}+
+        )}
       </div>
     </div>
   );
 }
 
-function ContactItem({ icon, title, subtitle, bgGradient, containerGradient }: any) {
-  return (
-    <div className={`flex items-center gap-3 p-3 rounded-xl border bg-gradient-to-r ${containerGradient}`}>
-      <div className={`p-2 rounded-lg bg-gradient-to-r ${bgGradient} text-white`}>{icon}</div>
-      <div>
-        <p className="font-semibold text-slate-900">{title}</p>
-        {subtitle && <p className="text-sm text-slate-700">{subtitle}</p>}
-      </div>
-    </div>
-  );
-}
+type ContactMiniItemProps = {
+  icon: React.ReactNode;
+  text: string;
+};
 
-function ContactMiniItem({ icon, text }: any) {
+function ContactMiniItem({ icon, text }: ContactMiniItemProps) {
   return (
     <div className="flex items-center gap-2 p-2 bg-gray-100 rounded-lg text-slate-900 text-sm">
       {icon}
@@ -237,7 +230,16 @@ function ContactMiniItem({ icon, text }: any) {
   );
 }
 
-function FormField({ id, label, icon, value, error, onChange }: any) {
+type FormFieldProps = {
+  id: string;
+  label: string;
+  icon: React.ReactNode;
+  value: string;
+  error?: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+function FormField({ id, label, icon, value, error, onChange }: FormFieldProps) {
   return (
     <div>
       <label htmlFor={id} className="block mb-1 font-semibold text-slate-800 flex items-center gap-2">

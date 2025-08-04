@@ -12,11 +12,9 @@ export default async function handler(req, res) {
   form.parse(req, async (err, fields, files) => {
     if (err) return res.status(500).json({ error: "File parsing error" });
 
-    // const imagePath = files.image.filepath;
-    // const base64Image = fs.readFileSync(imagePath, { encoding: "base64" });
     const imageFile = Array.isArray(files.image) ? files.image[0] : files.image;
-const imagePath = imageFile.filepath;
-const base64Image = fs.readFileSync(imagePath, { encoding: "base64" });
+    const imagePath = imageFile.filepath;
+    const base64Image = fs.readFileSync(imagePath, { encoding: "base64" });
 
     console.log("Parsed files:", files);
 
@@ -31,6 +29,7 @@ const base64Image = fs.readFileSync(imagePath, { encoding: "base64" });
         },
         body: JSON.stringify({
           model: "sonar-pro",
+
           stream: false,
           messages: [
             {
@@ -40,15 +39,18 @@ const base64Image = fs.readFileSync(imagePath, { encoding: "base64" });
                   type: "text",
                   text: `Analyze this house image and:
 1. Classify the gate design type as "straight" or "circular".
-2. Return 4 rectangle corner coordinates betweeen 0 to 100 (x,y) for where the main entrance gate should be placed.
+2. Identify the main entrance gate location.
+3. Return 4 rectangle corner coordinates betweeen 0 to 100 (x,y) for where the main entrance gate should be placed.
+4. The gate is usually located at the bottom portion of the image, little bit upward between two boundary columns or walls.
+5. You can determine size using coordinate in ex below
 Output only JSON:
 {
   "type": "straight",
   "coordinates": [
-    { "id": 1, "x": 30, "y": 40, "confidence": 0.95, "type": "top_left_corner" },
-    { "id": 2, "x": 70, "y": 40, "confidence": 0.92, "type": "top_right_corner" },
-    { "id": 3, "x": 70, "y": 75, "confidence": 0.89, "type": "bottom_right_corner" },
-    { "id": 4, "x": 30, "y": 75, "confidence": 0.91, "type": "bottom_left_corner" }
+    { "id": 1, "x": 30, "y": 75, "confidence": 0.95, "type": "top_left_corner" },
+    { "id": 2, "x": 70, "y": 75, "confidence": 0.92, "type": "top_right_corner" },
+    { "id": 3, "x": 70, "y": 98, "confidence": 0.89, "type": "bottom_right_corner" },
+    { "id": 4, "x": 30, "y": 98, "confidence": 0.91, "type": "bottom_left_corner" }
   ]
 }`,
                 },
