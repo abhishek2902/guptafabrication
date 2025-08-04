@@ -1,43 +1,33 @@
-"use client";
-import Head from 'next/head';
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
-import HeroHome from '@/components/HeroHome';
+export const metadata = {
+  title: "Gupta Fabrication - Welding Shop & Modern Gate Designs",
+  description: "Gupta Fabrication: Best welding shop for stylish, strong, and affordable gates, doors, fences, and metalwork. Perfect for modern home designs in Satna.",
+  keywords: "gupta fabrication, welding shop, gate design, metal fabrication, gates, steel doors, Satna",
+  openGraph: {
+    title: "Gupta Fabrication",
+    description: "Best welding and modern gate design shop in Satna.",
+    url: "https://guptafabrication.com/",
+    images: [
+      {
+        url: "https://guptafabrication.com/og-home.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gupta Fabrication",
+    description: "Strong & stylish gates, doors, and welding projects.",
+    images: ["https://guptafabrication.com/og-home.jpg"],
+  },
+  robots: "index, follow",
+  alternates: {
+    canonical: "https://guptafabrication.com/",
+  },
+};
+
+import HomeClient from './HomeClient';
 
 export default function Home() {
-
-  return (<>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "Gupta Fabrication",
-              "image": "https://guptafabrication.com/logo.jpg",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "[Your Street Address]",
-                "addressLocality": "[Your City]",
-                "addressRegion": "[Your State]",
-                "postalCode": "[Your Postal Code]",
-                "addressCountry": "[Your Country]"
-              },
-              "telephone": "[Your Phone Number]",
-              "url": "https://guptafabrication.com",
-              "servesCuisine": "Welding, Metal Fabrication"
-            }),
-          }}
-        />
-      </Head>
-      <main>
-        <div className="pt-[60px]">
-          <Navbar />
-          <HeroHome />
-          <Footer />
-        </div>
-      </main>
-    </>
-  )
+  return <HomeClient />;
 }

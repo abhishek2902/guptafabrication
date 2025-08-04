@@ -78,22 +78,30 @@ export default function HeroHome() {
           <p className="text-xl text-slate-600 mb-8">
             Let's discuss your project and bring your vision to life with our expert craftsmanship.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+919340059307"
-              className="bg-gradient-to-r from-amber-500 to-yellow-600 text-slate-900 px-8 py-4 rounded-lg text-lg font-bold hover:from-amber-400 hover:to-yellow-500 transition-all shadow-lg flex items-center justify-center gap-2"
-            >
-              📞 Call Now: +91-9340059307
-            </a>
+          <div className='flex flex-col gap-4 items-center'>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:+919340059307"
+                className="bg-gradient-to-r from-amber-500 to-yellow-600 text-slate-900 px-2 py-4 rounded-lg text-lg font-bold hover:from-amber-400 hover:to-yellow-500 transition-all shadow-lg flex items-center justify-center gap-2"
+              >
+                📞 Call Now: +91-9340059307
+              </a>
 
-            <a
-              href="https://wa.me/919340059307"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border-2 border-amber-500 text-amber-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-amber-500 hover:text-slate-900 transition-all shadow-lg flex items-center justify-center gap-2"
+              <a
+                href="https://wa.me/919340059307"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-2 border-amber-500 text-amber-600 px-16 py-4 rounded-lg text-lg font-semibold hover:bg-amber-500 hover:text-slate-900 transition-all shadow-lg flex items-center justify-center gap-2"
+              >
+                💬 WhatsApp Us
+              </a>
+            </div>
+            <Link
+              href="/products"
+              className="max-w-70 sm:max-w-80 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-slate-900 px-2 md:px-2 py-4 md:py-2 rounded-lg text-lg font-bold hover:from-amber-400 hover:via-yellow-400 hover:to-amber-500 transition-all shadow-2xl pulse-glow"
             >
-              💬 WhatsApp Us
-            </a>
+            View our modern gates, doors and metal products
+          </Link>
           </div>
         </div>
       </section>
