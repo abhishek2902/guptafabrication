@@ -8,6 +8,7 @@ type Product = {
   category: string;
   model: string;
   path: string;
+  alt: string;
 };
 
 type ProductCardProps = {
@@ -46,10 +47,10 @@ export default function ProductCard({ product, onOrderClick }: ProductCardProps)
       <div className="w-full bg-gradient-to-br from-slate-100 to-slate-300 p-2">
         <Image
           src={product.path}
-          alt={product.model}
+          alt={product.alt}
           width={500}
           height={380}
-          className="rounded-lg w-full aspect-[5/3] object-cover"
+          className="rounded-lg w-full aspect-[3/2] object-cover"
         />
       </div>
       <div className="flex justify-between items-center p-3">
