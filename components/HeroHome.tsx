@@ -53,7 +53,7 @@ export default function HeroHome() {
               </span> 
               &nbsp;and suggest the 
               <span className="text-white font-bold"> perfect gate designs </span>
-              that will enhance your property's 
+              that will enhance your property&apos;s
               <span className="text-blue-300 font-semibold"> beauty </span> 
               and 
               <span className="text-purple-300 font-semibold"> security</span>.
