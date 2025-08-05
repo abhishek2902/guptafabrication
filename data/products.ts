@@ -23,6 +23,26 @@ export const products = [
     { id: 21, category: "BoundaryGate", model: "M51", path: "/bdt/bdt21.jpg", likes: 13200, alt: "Copper blend premium gate design M51" },
     { id: 22, category: "BoundaryGate", model: "M52", path: "/bdt/bdt22.jpg", likes: 14000, alt: "Dual tone boundary gate design M52" },
 
+		// ---- Additional Boundary Gates ----
+		{ id: 100, category: "BoundaryGate", model: "M31", path: "/bdt/bdt02.jpg", likes: 10000, alt: "Steel boundary gate design M31 variant" },
+		{ id: 101, category: "BoundaryGate", model: "M31", path: "/bd/bd2.jpg", likes: 10000, alt: "Iron boundary gate design M31 alternative" },
+		{ id: 102, category: "BoundaryGate", model: "M32", path: "/bd/bd3.jpg", likes: 10000, alt: "Classic boundary gate design M32" },
+		{ id: 103, category: "BoundaryGate", model: "M33", path: "/bd/bd4.jpg", likes: 10000, alt: "Luxury steel boundary gate design M33" },
+		{ id: 104, category: "BoundaryGate", model: "M34", path: "/bd/bd5.jpg", likes: 10000, alt: "Premium boundary gate design M34" },
+		{ id: 105, category: "BoundaryGate", model: "M35", path: "/bd/bd6.jpg", likes: 10000, alt: "Modern steel gate design M35" },
+		{ id: 106, category: "BoundaryGate", model: "M36", path: "/bd/bd1.jpg", likes: 10000, alt: "Heavy-duty boundary gate design M36" },
+		{ id: 107, category: "BoundaryGate", model: "M37", path: "/bd/bd7.jpg", likes: 10000, alt: "Stylish iron boundary gate design M37" },
+		{ id: 108, category: "BoundaryGate", model: "M38", path: "/bd/bd8.jpg", likes: 10000, alt: "Artistic boundary gate design M38" },
+		{ id: 109, category: "BoundaryGate", model: "M32", path: "/bd/bd9.jpg", likes: 10000, alt: "Decorative steel boundary gate design M32" },
+		{ id: 1010, category: "BoundaryGate", model: "M310", path: "/bd/bd10.jpg", likes: 10000, alt: "Grand luxury boundary gate design M310" },
+		{ id: 1011, category: "BoundaryGate", model: "M311", path: "/bd/bd11.jpg", likes: 10000, alt: "Exclusive boundary gate design M311" },
+		{ id: 1012, category: "BoundaryGate", model: "M312", path: "/bd/bd12.jpg", likes: 10000, alt: "Minimalist steel boundary gate design M312" },
+		{ id: 1013, category: "BoundaryGate", model: "M313", path: "/bd/bd13.jpg", likes: 10000, alt: "Elegant iron boundary gate design M313" },
+		{ id: 1014, category: "BoundaryGate", model: "M314", path: "/bd/bd14.jpg", likes: 10000, alt: "Rust-resistant boundary gate design M314" },
+		{ id: 1015, category: "BoundaryGate", model: "M315", path: "/bd/bd1.webp", likes: 10000, alt: "Powder-coated boundary gate design M315" },
+		{ id: 1016, category: "BoundaryGate", model: "M316", path: "/bd/bd2.webp", likes: 10000, alt: "Durable steel boundary gate design M316" },
+		{ id: 10161, category: "BoundaryGate", model: "M316", path: "/bdt/bdt10.jpg", likes: 10000, alt: "Variant of boundary gate design M316" },
+
     // ---------------- Chaukhat ----------------
     { id: 1017, category: "Chaukhat", model: "C02", path: "/chau/ck1.avif", likes: 10000, alt: "Metal chaukhat frame design C02" },
     { id: 1018, category: "Chaukhat", model: "C03", path: "/chau/ck1.webp", likes: 10000, alt: "Strong chaukhat door frame design C03" },
