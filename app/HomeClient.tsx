@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroHome from '@/components/HeroHome';
+import FloatingAnalyzeButton from "@/components/FloatingAnalyzeButton";
 
 export default function HomeClient() {
   return (
@@ -14,6 +15,7 @@ export default function HomeClient() {
           <Navbar />
           <HeroHome />
           <Footer />
+          <FloatingAnalyzeButton />
         </div>
       </main>
     </>

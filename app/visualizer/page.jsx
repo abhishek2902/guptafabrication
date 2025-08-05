@@ -16,10 +16,10 @@ export default function Home() {
   const generateAICoordinates = useCallback(() => {
     // Simulate AI-generated rectangle coordinates
     const coordinates = [
-      { id: 1, x: 30, y: 75, confidence: 0.95, type: 'top_left_corner' },
-      { id: 2, x: 70, y: 75, confidence: 0.92, type: 'top_right_corner' },
-      { id: 3, x: 70, y: 98, confidence: 0.89, type: 'bottom_right_corner' },
-      { id: 4, x: 30, y: 98, confidence: 0.91, type: 'bottom_left_corner' }
+      { id: 1, x: 30, y: 70, confidence: 0.95, type: 'top_left_corner' },
+      { id: 2, x: 70, y: 70, confidence: 0.92, type: 'top_right_corner' },
+      { id: 3, x: 70, y: 93, confidence: 0.89, type: 'bottom_right_corner' },
+      { id: 4, x: 30, y: 93, confidence: 0.91, type: 'bottom_left_corner' }
     ];
     setAiCoordinates(coordinates);
     setSelectedTemplate(GATE_TEMPLATES[0]);
@@ -317,17 +317,12 @@ export default function Home() {
 
 // components/UploadSection.js
 function UploadSection({ onFileUpload }) {
-  const fileInputRef = useRef(null);
-
-  const handleClick = () => {
-    fileInputRef.current?.click();
-  };
+  const galleryInputRef = useRef(null);
+  const cameraInputRef = useRef(null);
 
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
-    if (file) {
-      onFileUpload(file);
-    }
+    if (file) onFileUpload(file);
   };
 
   const handleDragOver = (e) => {
@@ -344,14 +339,13 @@ function UploadSection({ onFileUpload }) {
     e.preventDefault();
     e.currentTarget.classList.remove('border-blue-500', 'bg-blue-50');
     const files = e.dataTransfer.files;
-    if (files.length > 0) {
-      onFileUpload(files[0]);
-    }
+    if (files.length > 0) onFileUpload(files[0]);
   };
 
   return (
-    <div className="md:pt-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 sm:pt-20">
-      <div className="bg-white rounded-xl shadow-2xl p-6 sm:p-8 lg:p-12 ">
+    <div className="md:pt-20 max-w-4xl mx-auto px- sm:px-6 lg:px-8 sm:pt-20">
+      <div className="bg-white rounded-xl shadow-2xl p-6 sm:p-8 lg:p-12">
+        {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             🏠 Upload Your House Image
@@ -360,36 +354,45 @@ function UploadSection({ onFileUpload }) {
             Let our AI analyze your house and suggest the perfect gate designs that will enhance your property&apos;s beauty and security
           </p>
         </div>
-        
+
+        {/* Drag and drop area */}
         <div
-          className="border-3 border-dashed border-gray-300 rounded-xl p-8 sm:p-12 lg:p-16 text-center cursor-pointer transition-all duration-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50 group"
-          onClick={handleClick}
+          className="border-3 border-dashed border-gray-300 rounded-xl pb-8 sm:p-12 lg:p-16 text-center cursor-pointer transition-all duration-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50 group"
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
         >
           <div className="space-y-6">
             <div className="text-6xl sm:text-7xl lg:text-8xl group-hover:scale-110 transition-transform duration-300">🏠📸</div>
-            <div className="space-y-3">
-              <p className="text-lg sm:text-xl font-semibold text-gray-700">
-                Click to upload or drag and drop
-              </p>
-              <p className="text-sm sm:text-base text-gray-500">
-                PNG, JPG, JPEG up to 10MB
-              </p>
-              <div className="flex items-center justify-center gap-2 text-xs text-gray-400">
-                <span>🔒</span>
-                <span>Secure & private</span>
-              </div>
+            <p className="text-lg sm:text-xl font-semibold text-gray-700">
+              Drag & Drop or Use Buttons Below
+            </p>
+            <p className="text-sm sm:text-base text-gray-500">PNG, JPG, JPEG up to 10MB</p>
+            <div className="flex items-center justify-center gap-2 text-xs text-gray-400">
+              <span>🔒</span>
+              <span>Secure & private</span>
             </div>
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-3 md:px-8 py-2 md:py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-1 md:gap-2 mx-auto">
-              <span className="text-lg pb-1">📸</span>
-              Add home image
-            </button>
+
+            {/* Buttons for both options */}
+            <div className="flex flex- sm:flex-row justify-center gap-2 mt-4">
+              <button
+                onClick={() => galleryInputRef.current?.click()}
+                className="text-sm bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-1.5 md:px-8 py-2 md:py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-1 md:gap-2 mx-auto"
+              >
+                📁 Upload from Gallery
+              </button>
+              <button
+                onClick={() => cameraInputRef.current?.click()}
+                className="text-sm bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-1.5 md:px-8 py-1.5 md:py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-1 md:gap-2 mx-auto"
+              >
+                <span className="text-lg pb-1">📸</span> Take a Photo
+              </button>
+            </div>
           </div>
         </div>
-        
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+
+        {/* Info Section */}
+        <div className="md:mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
           <div className="p-4 bg-blue-50 rounded-lg">
             <div className="text-2xl mb-2">🤖</div>
             <h3 className="font-semibold text-blue-800 mb-1">AI Analysis</h3>
@@ -406,12 +409,20 @@ function UploadSection({ onFileUpload }) {
             <p className="text-xs text-purple-600">Real-time visualization & customization</p>
           </div>
         </div>
-        
+
+        {/* Hidden Inputs */}
         <input
-          ref={fileInputRef}
+          ref={galleryInputRef}
           type="file"
           accept="image/*"
-          // capture="environment"
+          className="hidden"
+          onChange={handleFileChange}
+        />
+        <input
+          ref={cameraInputRef}
+          type="file"
+          accept="image/*"
+          capture="environment"
           className="hidden"
           onChange={handleFileChange}
         />
@@ -568,8 +579,19 @@ function GateSelectionSection({
     return { minX, maxX, minY, maxY };
   }, [aiCoordinates]);
 
+  const [showHandle, setShowHandle] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setShowHandle(false), 2000);
+  }, []);
+
+  const handleHomeClick = () => {
+    setShowHandle(true);
+    setTimeout(() => setShowHandle(false), 4000); // Hide after 2s
+  };
+
   return (
-    <div className="sm:pt-20 max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+    <div className="sm:pt-20 max-w-7xl mx-auto px-2 sm:px-4 lg:px-8" >
       <div className="bg-white rounded-xl shadow-2xl p-3 sm:p-6 lg:p-8">
         <h2 className="text-sm sm:text-lg md::text-2xl lg:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           🏗️ Gate Visualizer - AI-Powered Design
@@ -587,12 +609,14 @@ function GateSelectionSection({
             </div>
             
             <div className="border-2 border-gray-200 rounded-xl p-4 bg-gradient-to-br from-gray-50 to-gray-100 shadow-inner">
-              <div ref={imageContainerRef} className="relative inline-block max-w-full" style={{ touchAction: 'none' }}>
+              <div ref={imageContainerRef} className="relative inline-block max-w-full" style={{ touchAction: 'none' }} onClick={handleHomeClick}>
+                {showHandle && <FlashTip />}
                 <FlashTip />
                 <img
                   src={uploadedImage}
                   alt="Uploaded house"
                   className="max-w-full h-auto block rounded-lg shadow-lg pointer-events-none"
+                  onClick={handleHomeClick}
                 />
                 
                 {/* Draggable Markers */}
@@ -602,6 +626,8 @@ function GateSelectionSection({
                     coordinate={coord}
                     containerRef={imageContainerRef}
                     onUpdate={onCoordinateUpdate}
+                    showHandle={showHandle}
+                    handleHomeClick={handleHomeClick}
                   />
                 ))}
                 
@@ -665,7 +691,7 @@ function GateSelectionSection({
 }
 
 // components/DraggableMarker.js
-function DraggableMarker({ coordinate, containerRef, onUpdate }) {
+function DraggableMarker({ coordinate, containerRef, onUpdate, showHandle, handleHomeClick }) {
   const [isDragging, setIsDragging] = useState(false);
   const handleTouchStart = useCallback((e) => {
     
@@ -748,28 +774,33 @@ function DraggableMarker({ coordinate, containerRef, onUpdate }) {
   }, [coordinate.id, containerRef, onUpdate]);
 
   return (
-    <div
-      className={`absolute w-6 h-6 sm:w-8 sm:h-8 bg-blue-600 border-3 border-white rounded-full cursor-move transition-all duration-200 flex items-center justify-center text-white text-sm sm:text-base font-bold z-20 ${
-        isDragging ? 'scale-125 bg-blue-800 shadow-lg' : 'hover:scale-110 hover:bg-blue-500'
-      }`}
-      style={{
-        left: `${coordinate.x}%`,
-        top: `${coordinate.y}%`,
-        transform: 'translate(-50%, -50%)',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
-        minWidth: '22px',
-        minHeight: '22px',
-        touchAction: 'none',
-        userSelect: 'none',
-        WebkitUserSelect: 'none',
-        WebkitTouchCallout: 'none'
-      }}
-      onMouseDown={handleTouchStart}
-      onTouchStart={handleTouchStart}
-      title={`${coordinate.type.replace('_', ' ')} (${Math.round(coordinate.confidence * 100)}% confidence) - Drag to adjust`}
-    >
-      {coordinate.id}
-    </div>
+    <>
+      {(showHandle || isDragging) &&
+        <div
+          className={`absolute w-6 h-6 sm:w-9 sm:h-9
+                      bg-blue-600 border-2 border-white rounded-full
+                      cursor-move active:cursor-grabbing
+                      flex items-center justify-center shadow-md
+                      ${isDragging ? 'scale-125 shadow-lg' : 'hover:scale-110'}`}
+          style={{
+            left: `${coordinate.x}%`,
+            top: `${coordinate.y}%`,
+            transform: 'translate(-50%, -50%)',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
+            touchAction: 'none',
+            userSelect: 'none'
+          }}
+          onMouseDown={handleTouchStart}
+          onTouchStart={handleTouchStart}
+          onClick={handleHomeClick}
+        >
+          {/* Blinking Grip Lines */}
+          <div className="flex flex-col gap-[2px] text-white text-sm sm:text-base font-bold">
+            {coordinate.id}
+          </div>
+        </div>
+      }
+    </>
   );
 }
 
@@ -781,7 +812,7 @@ function GateTemplate({ template, bounds }) {
 
   return (
     <div
-      className="absolute border border-green-500 bg-green-500 bg-opacity-10 rounded-lg pointer-events-none z-5 overflow-hidden"
+      className="absolute border border-green-500 bg-green-500 bg-opacity-10 rounded-md pointer-events-none z-5 overflow-hidden"
       style={{
         left: `${minX}%`,
         top: `${minY}%`,

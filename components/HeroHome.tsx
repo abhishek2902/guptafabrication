@@ -23,16 +23,40 @@ export default function HeroHome() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-6 md:mb-16">
             <h1 className="text-2xl md:text-7xl font-bold text-white mb-6 floating-animation">
               Premium Metal{" "}
               <span className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent">
                 Fabrication
               </span>
             </h1>
-            <p className="text-md md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Crafting exceptional gates, railings, and custom metalwork with precision and artistry.
-              Your vision, our expertise.
+            <p className="text-lg md:text-2xl text-center mb-4 sm:mb-8 max-w-3xl mx-auto leading-relaxed text-slate-200">
+              <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 
+                              text-transparent bg-clip-text font-semibold animate-gradient">
+                Crafting exceptional gates, railings,
+              </span> 
+              &nbsp;and 
+              <span className="text-white font-bold"> custom metalwork </span>
+              with precision and artistry. 
+              <br />
+              <span className="relative inline-block font-bold text-amber-300">
+                Your vision, our expertise.
+                {/* <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-amber-400 rounded-full animate-underline"></span> */}
+              </span>
+            </p>
+
+            <p className="text-base md:text-lg text-slate-200 mb-4 max-w-3xl mx-auto leading-relaxed 
+               text-center bg-clip-text">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 
+                              text-transparent bg-clip-text font-semibold animate-gradient">
+                Let our AI analyze your house
+              </span> 
+              &nbsp;and suggest the 
+              <span className="text-white font-bold"> perfect gate designs </span>
+              that will enhance your property's 
+              <span className="text-blue-300 font-semibold"> beauty </span> 
+              and 
+              <span className="text-purple-300 font-semibold"> security</span>.
             </p>
             <div className="flex flex-row gap-4 justify-center">
               <Link

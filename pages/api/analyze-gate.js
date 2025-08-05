@@ -42,15 +42,16 @@ export default async function handler(req, res) {
 2. Identify the main entrance gate location.
 3. Return 4 rectangle corner coordinates betweeen 0 to 100 (x,y) for where the main entrance gate should be placed.
 4. The gate is usually located at the bottom portion of the image, little bit upward between two boundary columns or walls.
-5. You can determine size using coordinate in ex below
+5. You have to find coordinates between the side columns and bottom beam(mostly 8 point above the ground) of boundary to exactly fit the gate, you can increase width and height accordingly.
+6. The y coodinate of coordinates with id 3 and 4 must be smaller than or equal to 93.
 Output only JSON:
 {
   "type": "straight",
   "coordinates": [
-    { "id": 1, "x": 30, "y": 75, "confidence": 0.95, "type": "top_left_corner" },
-    { "id": 2, "x": 70, "y": 75, "confidence": 0.92, "type": "top_right_corner" },
-    { "id": 3, "x": 70, "y": 98, "confidence": 0.89, "type": "bottom_right_corner" },
-    { "id": 4, "x": 30, "y": 98, "confidence": 0.91, "type": "bottom_left_corner" }
+    { "id": 1, "x": 30, "y": 70, "confidence": 0.95, "type": "top_left_corner" },
+    { "id": 2, "x": 70, "y": 70, "confidence": 0.92, "type": "top_right_corner" },
+    { "id": 3, "x": 70, "y": 93, "confidence": 0.89, "type": "bottom_right_corner" },
+    { "id": 4, "x": 30, "y": 93, "confidence": 0.91, "type": "bottom_left_corner" }
   ]
 }`,
                 },
