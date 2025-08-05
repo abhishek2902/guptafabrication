@@ -1,7 +1,8 @@
 export const metadata = {
-  title: "Products – Gupta Fabrication | Modern Gates, Doors, Windows & More",
+  // title: "Products – Gupta Fabrication | Modern Gates, Doors, Windows & More",
+  title: "Modern Gate Designs & Metal Products – Gupta Fabrication",
   description: "Browse modern, strong, and affordable boundary gates, doors, windows, shutters, and custom metalwork at Gupta Fabrication. Quality welding work in Satna.",
-  keywords: "welding shop products, gates, doors, boundary, modern gate designs, windows, shutters, Gupta Fabrication, Satna",
+  keywords: "gate design, modern gates, welding shop products, gates, doors, boundary, modern gate designs, windows, shutters, Gupta Fabrication, Satna",
   openGraph: {
     title: "Products – Gupta Fabrication",
     description: "High-quality gates, doors, windows, and metalwork at Gupta Fabrication.",
