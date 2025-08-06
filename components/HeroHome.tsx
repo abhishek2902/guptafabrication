@@ -76,9 +76,16 @@ export default function HeroHome() {
 
           {/* Showcase */}
           <GateShowcase />
+          <h1 className=" mt-8 text-2xl md:text-5xl text-center font-bold text-white mb-0 floating-animation">
+            Gupta Fabrication: Expert {" "}
+            <span className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent">
+              Gate Design
+            </span>
+            {" "} & Metal Fabrication
+          </h1>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10 text-center">
             <div className="text-white">
               <div className="text-4xl font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent mb-2">1000+</div>
               <div className="text-slate-300">Projects Completed</div>
@@ -96,6 +103,15 @@ export default function HeroHome() {
               <div className="text-slate-300">Workers Available</div>
             </div>
           </div>
+          <p className="text-lg md:text-2xl text-center mt-12 mb-4 sm:mb- max-w-3xl mx-auto leading-relaxed text-slate-200">
+            <span className="text-white font-bold">
+              Gupta Fabrication specializes in bringing your vision to life in
+             </span>
+             &nbsp;
+            <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-transparent bg-clip-text font-semibold animate-gradient">
+              Satna and beyond.
+            </span>
+          </p>
         </div>
       </section>
 

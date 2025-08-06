@@ -24,6 +24,7 @@ export const metadata: Metadata = {
       "Expert welding and fabrication services by Gupta Fabrication.",
     url: "https://guptafabrication.com/",
     siteName: "Gupta Fabrication",
+    type: "website",
     images: [
       {
         url: "https://guptafabrication.com/logo.jpg",
