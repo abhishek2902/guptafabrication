@@ -12,6 +12,7 @@ export default function Home() {
   const [aiCoordinates, setAiCoordinates] = useState([]);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
   const [selectedTemplateType, setSelectedTemplateType] = useState("straight");
+  const [uploadedFile, setUploadedFile] = useState(null);
 
   const generateAICoordinates = useCallback(() => {
     // Simulate AI-generated rectangle coordinates
@@ -22,7 +23,10 @@ export default function Home() {
       { id: 4, x: 30, y: 93, confidence: 0.91, type: 'bottom_left_corner' }
     ];
     setAiCoordinates(coordinates);
-    setSelectedTemplate(GATE_TEMPLATES[0]);
+    const randomIndex = Math.floor(Math.random() * GATE_TEMPLATES.length);
+        const randomTemplate = GATE_TEMPLATES[randomIndex];
+        setSelectedTemplate(randomTemplate || GATE_TEMPLATES[0]);
+        // setSelectedTemplate(GATE_TEMPLATES[0]);
   }, []);
 
   const handleFileUpload = useCallback(async (file) => {
@@ -37,6 +41,7 @@ export default function Home() {
     }
 
     // Show preview immediately
+    setUploadedFile(file);
     setUploadedImage(URL.createObjectURL(file));
     setCurrentStep('processing');
 
@@ -60,7 +65,11 @@ export default function Home() {
         const matchingTemplate = GATE_TEMPLATES.find(
           (template) => template.templateType?.toLowerCase() === data.type.toLowerCase()
         );
-        setSelectedTemplate(matchingTemplate || GATE_TEMPLATES[0]);
+        const randomIndex = Math.floor(Math.random() * GATE_TEMPLATES.length);
+        const randomTemplate = GATE_TEMPLATES[randomIndex];
+        // console.log(randomTemplate)
+        setSelectedTemplate(randomTemplate || GATE_TEMPLATES[0]);
+        // setSelectedTemplate(matchingTemplate || GATE_TEMPLATES[0]);
         setSelectedTemplateType(data.type); // enable later if you have filtering
       } else {
         generateAICoordinates();
@@ -156,6 +165,7 @@ export default function Home() {
       alert('Please select a gate template and ensure all coordinates are set.');
       return;
     }
+    const freshBlobUrl = URL.createObjectURL(uploadedFile);
 
     setIsDownloading(true);
 
@@ -268,7 +278,8 @@ export default function Home() {
       setIsDownloading(false);
     };
     
-    houseImg.src = uploadedImage;
+    // houseImg.src = uploadedImage;
+    houseImg.src = freshBlobUrl;
   }, [uploadedImage, selectedTemplate, aiCoordinates]);
 
   return (
@@ -911,7 +922,7 @@ function GateGallery({ templates, selectedTemplate, onTemplateSelect,selectedTem
               <div className="space-y-1 text-xs">
                 <p className="text-blue-700"><span className="font-medium">Category:</span> {selectedTemplate.category}</p>
                 <p className="text-blue-700"><span className="font-medium">Price:</span> {selectedTemplate.price}</p>
-                <p className="text-blue-700"><span className="font-medium">Size:</span> {selectedTemplate.size.width}cm × {selectedTemplate.size.height}cm</p>
+                <p className="text-blue-700"><span className="font-medium">Size:</span> {selectedTemplate.size.width}&nbsp;feet × {selectedTemplate.size.height}&nbsp;feet</p>
                 <p className="text-blue-700"><span className="font-medium">Type:</span> {selectedTemplate.templateType}</p>
               </div>
             </div>

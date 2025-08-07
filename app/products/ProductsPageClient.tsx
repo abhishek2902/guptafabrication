@@ -63,7 +63,7 @@ export default function ProductsPageClient() {
       <div className="h-16 md:h-16" />
 
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <h2 className="text-2xl md:text-4xl font-extrabold text-slate-800 mb-2">Product Designs</h2>
+        <h2 className="text-2xl md:text-4xl font-extrabold text-slate-800 mb-2">Modern Gate Designs</h2>
         <p className="text-amber-600 font-medium mb-2 md:mb-8 text-xs md:text-xl">
           Explore our range of premium metalwork: gates, doors, windows, shutters and more.
         </p>

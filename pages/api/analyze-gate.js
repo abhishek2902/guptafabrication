@@ -38,12 +38,11 @@ export default async function handler(req, res) {
                 {
                   type: "text",
                   text: `Analyze this house image and:
-1. Classify the gate design type as "straight" or "circular".
-2. Identify the main entrance gate location.
-3. Return 4 rectangle corner coordinates betweeen 0 to 100 (x,y) for where the main entrance gate should be placed.
-4. The gate is usually located at the bottom portion of the image, little bit upward between two boundary columns or walls.
-5. You have to find coordinates between the side columns and bottom beam(mostly 8 point above the ground) of boundary to exactly fit the gate, you can increase width and height accordingly.
-6. The y coodinate of coordinates with id 3 and 4 must be smaller than or equal to 93.
+1. Identify the main entrance gate location, which is typically near the lower portion of the image, slightly above the ground. It is usually placed between two boundary columns and just above the bottom beam (approximately 8 units above the ground). You must determine coordinates within this area to accurately fit the gate, adjusting the width and height as necessary.
+2. Classify the gate design type suitable for the home as either 'straight' or 'arched'.
+3. Return 4 rectangle corner coordinates between 0 to 100 (x,y) for where the main entrance gate should be placed.
+5. The y coordinate of coordinates with id 3 and 4 must be smaller than or equal to 93.
+6. Ensure the rectangle formed by the coordinates has a width-to-height ratio of 3:2.
 Output only JSON:
 {
   "type": "straight",

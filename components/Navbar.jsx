@@ -107,7 +107,7 @@ const Navbar = () => {
               { name: "About", href: "/about" },
               { name: "AI Gate Visualizer", href: "/visualizer" },
               // { name: "Book Demo", href: "/book-demo" },
-              // { name: "FAQ", href: "/faq" },
+              { name: "FAQ", href: "/faq" },
               { name: "Contact", href: "/contact" },
             ].map((item, index) => (
               <li key={index}>

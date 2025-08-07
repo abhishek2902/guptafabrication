@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gupta Fabrication - Welding & Metal Fabrication Services",
+  title: "Gate Designs | Gupta Fabrication - Welding & Gate Fabrication Services",
   description:
-    "Gupta Fabrication offers expert welding and fabrication services. Quality, reliability, and fast turnaround in Satna.",
+  "Discover modern gate designs with expert welding and fabrication services in Satna. Gupta Fabrication builds stylish steel, metal, and boundary gates for homes and businesses.",
   keywords:
-    "welding, metal fabrication, Gupta Fabrication, Satna, steel works, fabrication shop",
+  "gate design, modern gate designs, steel gates, metal gates, boundary gate designs, custom gates, fabrication services Satna, welding shop Satna",
   openGraph: {
     title: "Gupta Fabrication",
     description:

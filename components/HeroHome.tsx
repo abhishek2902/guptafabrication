@@ -60,7 +60,7 @@ export default function HeroHome() {
             </p>
             <div className="flex flex-row gap-4 justify-center">
               <Link
-                href="/products"
+                href="/gate-designs"
                 className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-slate-900 px-4 md:px-8 py-2 md:py-4 rounded-lg text-lg font-bold hover:from-amber-400 hover:via-yellow-400 hover:to-amber-500 transition-all shadow-2xl pulse-glow"
               >
                 Gate Design

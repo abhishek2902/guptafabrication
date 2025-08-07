@@ -6,6 +6,7 @@ export const metadata = {
     title: "Gupta Fabrication",
     description: "Best welding and modern gate design shop in Satna.",
     url: "https://guptafabrication.com/",
+    siteName: "Gupta Fabrication",
     images: [
       {
         url: "https://guptafabrication.com/og-home.jpg",
