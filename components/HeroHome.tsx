@@ -10,9 +10,11 @@ import { CoreValues } from './CoreValues';
 import { ExpertiseShowcase } from './ExpertiseShowcase';
 import { TeamSection } from './TeamSection';
 import { WhyChooseUs } from './WhyChooseUs';
+import FloatingLink from './FloatingLink'
 
 export default function HeroHome() {
   const [contactOpen, setContactOpen] = useState(false);
+
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* HERO */}
@@ -45,19 +47,6 @@ export default function HeroHome() {
               </span>
             </p>
 
-            <p className="text-base md:text-lg text-slate-200 mb-4 max-w-3xl mx-auto leading-relaxed 
-               text-center bg-clip-text">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 
-                              text-transparent bg-clip-text font-semibold animate-gradient">
-                Let our AI analyze your house
-              </span> 
-              &nbsp;and suggest the 
-              <span className="text-white font-bold"> perfect gate designs </span>
-              that will enhance your property&apos;s
-              <span className="text-blue-300 font-semibold"> beauty </span> 
-              and 
-              <span className="text-purple-300 font-semibold"> security</span>.
-            </p>
             <div className="flex flex-row gap-4 justify-center">
               <Link
                 href="/gate-designs"
@@ -114,43 +103,7 @@ export default function HeroHome() {
           </p>
         </div>
       </section>
-
-      {/* Call to Action */}
-      <section className="bg-gradient-to-br from-slate-50 to-slate-100 py-16 border-t border-amber-200">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-slate-800 to-slate-900 bg-clip-text text-transparent mb-6">
-            Ready to Transform Your Space?
-          </h2>
-          <p className="text-xl text-slate-600 mb-8">
-            Let&apos;s discuss your project and bring your vision to life with our expert craftsmanship.
-          </p>
-          <div className='flex flex-col gap-4 items-center'>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+918319962297"
-                className="bg-gradient-to-r from-amber-500 to-yellow-600 text-slate-900 px-2 py-4 rounded-lg text-lg font-bold hover:from-amber-400 hover:to-yellow-500 transition-all shadow-lg flex items-center justify-center gap-2"
-              >
-                📞 Call Now: +91-8319962297
-              </a>
-
-              <a
-                href="https://wa.me/918319962297"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-2 border-amber-500 text-amber-600 px-16 py-4 rounded-lg text-lg font-semibold hover:bg-amber-500 hover:text-slate-900 transition-all shadow-lg flex items-center justify-center gap-2"
-              >
-                💬 WhatsApp Us
-              </a>
-            </div>
-            <Link
-              href="/products"
-              className="max-w-70 sm:max-w-80 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-slate-900 px-2 md:px-2 py-4 md:py-2 rounded-lg text-lg font-bold hover:from-amber-400 hover:via-yellow-400 hover:to-amber-500 transition-all shadow-2xl pulse-glow"
-            >
-            View our modern gates, doors and metal products
-          </Link>
-          </div>
-        </div>
-      </section>
+      <FloatingLink/>
       <HeroSection/>
       <CompanyStory/>
       <CoreValues/>

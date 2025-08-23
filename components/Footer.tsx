@@ -133,7 +133,7 @@ export default function Footer() {
               <h3 className="text-xl font-bold text-amber-400 mb-6">Quick Links</h3>
               <ul className="space-y-3">
                 {quickLinks.map(link => (
-                  <li key={link.href}>
+                  <li key={link.label}>
                     <a href={link.href} className="text-slate-300 hover:text-amber-400 transition-colors flex items-center">
                       <span className="mr-2">→</span>{link.label}
                     </a>

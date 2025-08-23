@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { GATE_TEMPLATES  } from '@/data/products'; // adjust the path if needed
+import { Home as HomeIcon, ArrowRight, Shield } from 'lucide-react';
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState('upload');
@@ -359,7 +360,7 @@ function UploadSection({ onFileUpload }) {
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            🏠 Upload Your House Image
+            Upload Your House Image
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
             Let our AI analyze your house and suggest the perfect gate designs that will enhance your property&apos;s beauty and security
@@ -374,27 +375,51 @@ function UploadSection({ onFileUpload }) {
           onDrop={handleDrop}
         >
           <div className="space-y-6">
-            <div className="text-6xl sm:text-7xl lg:text-8xl group-hover:scale-110 transition-transform duration-300">🏠📸</div>
-            <p className="text-lg sm:text-xl font-semibold text-gray-700">
+            <div className="flex items-center justify-center gap-4">
+              {/* Without Gate */}
+              <div className="flex flex-col items-center text-center w-40">
+                <img
+                  src="/miscel/homenogate.jpeg"
+                  alt="House without gate"
+                  className="w-40 h-auto rounded-xl shadow-md"
+                />
+                <HomeIcon className="w-5 h-5 text-red-500 mt-2" />
+                <p className="text-sm font-medium">Without Gate</p>
+              </div>
+
+              {/* Arrow */}
+              <div className="flex items-center space-x-1">
+                <p className="rounded-full p-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600">
+                  <ArrowRight className="w-6 h-6 text-white" />
+                </p>
+              </div>
+
+              {/* With Gate */}
+              <div className="flex flex-col items-center text-center w-40">
+                <img
+                  src="/miscel/homewithgate.jpeg"
+                  alt="House with gate"
+                  className="w-40 h-auto rounded-xl shadow-md"
+                />
+                <Shield className="w-5 h-5 text-green-600 mt-2" />
+                <p className="text-sm font-medium">With Gate</p>
+              </div>
+            </div>
+            <p className="sm:text-xl font-semibold text-gray-700">
               Drag & Drop or Use Buttons Below
             </p>
-            <p className="text-sm sm:text-base text-gray-500">PNG, JPG, JPEG up to 10MB</p>
-            <div className="flex items-center justify-center gap-2 text-xs text-gray-400">
-              <span>🔒</span>
-              <span>Secure & private</span>
-            </div>
 
             {/* Buttons for both options */}
             <div className="flex flex- sm:flex-row justify-center gap-2 mt-4">
               <button
                 onClick={() => galleryInputRef.current?.click()}
-                className="text-sm bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-1.5 md:px-8 py-2 md:py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-1 md:gap-2 mx-auto"
+                className="text-sm bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-2 md:px-8 py-2 md:py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-1 md:gap-2 mx-auto"
               >
                 📁 Upload from Gallery
               </button>
               <button
                 onClick={() => cameraInputRef.current?.click()}
-                className="text-sm bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-1.5 md:px-8 py-1.5 md:py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-1 md:gap-2 mx-auto"
+                className="md:hidden text-sm bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-2 md:px-8 py-1.5 md:py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-1 md:gap-2 mx-auto"
               >
                 <span className="text-lg pb-1">📸</span> Take a Photo
               </button>
@@ -419,6 +444,14 @@ function UploadSection({ onFileUpload }) {
             <h3 className="font-semibold text-purple-800 mb-1">Instant Preview</h3>
             <p className="text-xs text-purple-600">Real-time visualization & customization</p>
           </div>
+        </div>
+        <div className="flex flex-col items-center justify-center gap-4 mt-2">
+          <div className="text-6xl sm:text-7xl lg:text-8xl group-hover:scale-110 transition-transform duration-300">🏠📸</div>
+            <p className="text-sm sm:text-base text-gray-500">PNG, JPG, JPEG up to 10MB</p>
+            <div className="flex items-center justify-center gap-2 text-xs text-gray-400">
+              <span>🔒</span>
+              <span>Secure & private</span>
+            </div>
         </div>
 
         {/* Hidden Inputs */}
@@ -835,7 +868,7 @@ function GateTemplate({ template, bounds }) {
       <img
         src={template.image}
         alt={template.name}
-        className="w-full h-full object-cover opacity-"
+        className="w-full h-full object- opacity-"
         //! imp // className="w-full h-full object-cover opacity-85"
         //! imp // style={{ 
         //   filter: 'brightness(0.95) contrast(1.05)',

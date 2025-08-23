@@ -15,7 +15,7 @@ export default function FloatingAnalyzeButton() {
                  animate-pulse-glow"
     >
       <BrainCircuit className="w-4 h-4" />
-      Analyze with AI
+      AI Gate Visualizer
     </Link>
   );
 }
