@@ -54,7 +54,7 @@ function CallToAction() {
             href="tel:+919876543210"
             className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg"
           >
-            <Phone size={20} /> Call Now: +91 9340059307
+            <Phone size={20} /> Call Now: +91 8319962297
           </a>
           <a
             href="mailto:info@guptafabrication.com"

@@ -49,7 +49,7 @@ const gateDesigns = [
         <circle cx="75" cy="65" r="3" fill="currentColor"/>
       </svg>
     ),
-    imgSrc:'/bd/bd2.jpg',
+    imgSrc:'/gate-design-boundary/main-gate-design-2.jpg',
     alt:"Custom wrought iron gate design for residential property"
   },
   {
@@ -69,7 +69,7 @@ const gateDesigns = [
         <line x1="90" y1="110" x2="90" y2="120" stroke="currentColor" strokeWidth="2"/>
       </svg>
     ),
-    imgSrc:"/chau/ck2.jpg",
+    imgSrc:"/chaukhat-design/chaukhat-design-2.jpg",
     alt:"Custom pipe gate design for modern property"
   },
   {
@@ -88,7 +88,7 @@ const gateDesigns = [
         <line x1="10" y1="100" x2="110" y2="100" stroke="currentColor" strokeWidth="2"/>
       </svg>
     ),
-    imgSrc:"/railing/rail1.jpg",
+    imgSrc:"/railing-design/railing-design-1.jpg",
     alt:"Custom pipe iron railings design for residential property"
   },
   {
@@ -109,7 +109,7 @@ const gateDesigns = [
         <line x1="100" y1="100" x2="90" y2="90" stroke="currentColor" strokeWidth="2"/>
       </svg>
     ),
-    imgSrc:"/bd/bd10.jpg",
+    imgSrc:"/gate-design-boundary/modern-gate-design-0.jpg",
     alt:"Modern pipe gate design and products for residential property"
   },
 ];

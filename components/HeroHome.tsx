@@ -127,14 +127,14 @@ export default function HeroHome() {
           <div className='flex flex-col gap-4 items-center'>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+919340059307"
+                href="tel:+918319962297"
                 className="bg-gradient-to-r from-amber-500 to-yellow-600 text-slate-900 px-2 py-4 rounded-lg text-lg font-bold hover:from-amber-400 hover:to-yellow-500 transition-all shadow-lg flex items-center justify-center gap-2"
               >
-                📞 Call Now: +91-9340059307
+                📞 Call Now: +91-8319962297
               </a>
 
               <a
-                href="https://wa.me/919340059307"
+                href="https://wa.me/918319962297"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border-2 border-amber-500 text-amber-600 px-16 py-4 rounded-lg text-lg font-semibold hover:bg-amber-500 hover:text-slate-900 transition-all shadow-lg flex items-center justify-center gap-2"

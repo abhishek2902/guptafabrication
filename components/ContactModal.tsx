@@ -130,12 +130,12 @@ export default function ContactModal({ isOpen, onClose }: { isOpen: boolean; onC
 						</div>
 						<div className="flex-1 flex items-center justify-between">
 							<a
-								href="tel:+919340059307"
+								href="tel:+91 8319962297"
 								className="font-semibold text-slate-900 hover:underline"
 							>
-								+91 9340059307
+								+91 8319962297
 							</a>
-							<CopyButton text="+91 9340059307" />
+							<CopyButton text="+91 8319962297" />
 						</div>
 					</div>
 
@@ -151,7 +151,7 @@ export default function ContactModal({ isOpen, onClose }: { isOpen: boolean; onC
 							>
 								guptafabrication@gmail.com
 							</a>
-							<CopyButton text="arumsteels@gmail.com" />
+							<CopyButton text="guptafabricationsatna@gmail.com" />
 						</div>
 					</div>
 
@@ -163,7 +163,7 @@ export default function ContactModal({ isOpen, onClose }: { isOpen: boolean; onC
 						/>
 						<ContactMiniItem
 							icon={<Clock className="text-amber-600" size={16} />}
-							text="Mon-Fri: 7AM-6PM"
+							text="Mon-Fri: 7AM-8PM"
 						/>
 					</div>
 				</div>

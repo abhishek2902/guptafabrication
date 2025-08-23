@@ -79,8 +79,8 @@ export default function ContactPage() {
           {/* Info Col */}
           <div className="space-y-7">
             {/* Contact Cards */}
-            <InfoCard icon={<Phone />} color="bg-blue-700" title="Phone Number" value="+91 9340059307" desc="Call Mon-Sat, 8AM-7PM" />
-            <InfoCard icon={<Mail />} color="bg-teal-600" title="Email" value="arumsteels@gmail.com" desc="We&apos;ll respond within 24 hours" />
+            <InfoCard icon={<Phone />} color="bg-blue-700" title="Phone Number" value="+91 8319962297" desc="Call Mon-Sat, 8AM-7PM" />
+            <InfoCard icon={<Mail />} color="bg-teal-600" title="Email" value="guptafabricationsatna@gmail.com" desc="We&apos;ll respond within 24 hours" />
             <InfoCard icon={<MapPin />} color="bg-violet-600" title="Workshop" value="1HV54+4X8, Maihar Bypass Rd, Delaura,Utaily, Tikuria Tola, Satna, Madhya Pradesh" />
             <InfoCard icon={<Clock />} color="bg-gradient-to-r from-amber-500 to-yellow-600" title="Working Hours" value="Mon-Sat: 8AM-7PM | Sun: 10AM-4PM" />
             {/* Specialties */}

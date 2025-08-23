@@ -24,7 +24,7 @@ export default function Head() {
               "postalCode": "485001",
               "addressCountry": "IN"
             },
-            "telephone": "9340059307",
+            "telephone": "8319962297",
             "url": "https://guptafabrication.com",
             "areaServed": "Satna, MP",
             "description": "Boundary gates, doors, windows, fences, shutters, and custom welding at low cost with strong modern designs matching your home.",
