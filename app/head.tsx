@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 // app/head.tsx
 export default function Head() {
   return (
@@ -28,6 +30,19 @@ export default function Head() {
             "description": "Boundary gates, doors, windows, fences, shutters, and custom welding at low cost with strong modern designs matching your home.",
             "servesCuisine": "Welding, Metal Fabrication"
           }),
+        }}
+      />
+
+      {/* <!-- Google tag (gtag.js) --> */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJYQT83HQ8"></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RJYQT83HQ8');
+          `,
         }}
       />
     </>

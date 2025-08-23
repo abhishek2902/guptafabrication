@@ -5,6 +5,7 @@ import ProductCard from '@/components/ProductCard';
 import ProductNav from '@/components/ProductNav';
 import { products as allProducts } from '@/data/products'; // adjust the path if needed
 import ContactModal from '@/components/ContactModal';
+import Footer from '@/components/Footer';
 
 type CategoryKey = 'favid' | 'boundary-gates' | 'windows' | 'doors' | 'chaukhat' | 'shutters' | 'grills' | 'railing';
 
@@ -86,6 +87,7 @@ export default function ProductsPageClient() {
         />
       )}
       <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
+      <Footer />
     </div>
   );
 }

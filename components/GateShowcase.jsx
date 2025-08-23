@@ -21,12 +21,12 @@ function GateCard({ imgSrc, svg, title, desc, onClick,alt }) {
         />
       </div>
       <h3 className="text-amber-400 text-lg font-bold mb-2">{title}</h3>
-      <p className="text-slate-300 text-sm">{desc}</p>
+      <p className="text-slate-300 text-sm mb-2">{desc}</p>
       <Link
         href="/products"
-        className="mt-4 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-xs text-slate-900 px-2 md:px-2 py-1 md:py-1 rounded-lg font-bold hover:from-amber-400 hover:via-yellow-400 hover:to-amber-500 transition-all shadow-2xl pulse-glow"
+        className="mt-4 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-xs text-slate-900 px-2 md:px-2 py-2 md:py-2 rounded-lg font-bold hover:from-amber-400 hover:via-yellow-400 hover:to-amber-500 transition-all shadow-2xl pulse-glow"
       >
-        See Designs
+        View Catalogue
       </Link>
     </div>
   );

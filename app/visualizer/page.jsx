@@ -288,7 +288,7 @@ export default function Home() {
         <title>Gupta Fabrication - AI Gate Visualizer</title>
         <meta name="description" content="AI-powered gate visualization tool - See real gate designs on your house instantly" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <div className="bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 min-h-screen">

@@ -37,7 +37,7 @@ const Navbar = () => {
 		<div className="flex text-xs ml-auto items-end md:space-x-8 md:mt-0 font-sm text-white">
 			{!isOpen && <>
 				<Link
-					href="/products"
+					href="/gate-designs"
 					className="group mr-3 relative md:hidden block pb-2 px- tracking-wide text-white rounded-lg md:hover:bg-transparent transition-all duration-300"
 				>
 					<span className="group-hover:scale-105 transition-transform duration-300">
@@ -102,8 +102,8 @@ const Navbar = () => {
 				</svg>
         	</button>
             {[
-              { name: "Boundary Gate Design", href: "/products" },
-              { name: "All Design", href: "/products" },
+              { name: "Boundary Gate Design", href: "/gate-designs" },
+              { name: "Catalogue", href: "/products" },
               { name: "About", href: "/about" },
               { name: "AI Gate Visualizer", href: "/visualizer" },
               // { name: "Book Demo", href: "/book-demo" },
