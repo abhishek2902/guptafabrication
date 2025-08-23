@@ -1,4 +1,5 @@
 'use client';
+import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -38,12 +39,18 @@ export default function ProductNav({ onCategory, activeCategory = null, isTop = 
   return (
 		 <nav className={`w-full z-40 ${isTop ? 'fixed top-0' : 'fixed bottom-0'} bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b ${isTop ? 'border-amber-500/100' : 'border-t border-amber-500/100'} shadow-lg`}>
 
-			<div className="max-w-7xl mx-auto flex gap-6 justify-between items-center px-2 py-2 overflow-x-auto">
+			<div className="max-w-7xl mx-auto flex gap-6 justify-between items-center px-2 sm:py-2 overflow-x-auto">
 
         {/* Logo only on top nav */}
-        {isTop && (
-					<Link href="/" className="flex items-center space-x-3 absolute	left-8">
-						<img src="/gflogo.png" className="h-10" alt="Gupta Fabrication Logo" />
+        {isTop ? (
+					<Link href="/" className="flex items-center space-x-3 absolute	left-4">
+						<img src="/logon8.png" className="h-14 sm:h-16" alt="Gupta Fabrication Logo" />
+					</Link>
+        ):(
+					<Link href="/" className="flex items-center space-x-3 absolute	left-4">
+						<p className="relative rounded-full p-2 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600">
+              <ArrowLeft className="w-6 h-6 text-slate-900" />
+            </p>
 					</Link>
         )}
 

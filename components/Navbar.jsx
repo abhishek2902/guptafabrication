@@ -30,11 +30,11 @@ const Navbar = () => {
 		>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pl-4 py-3 md:py-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-3">
-          <img src="/gflogo.png" className="h-10" alt="Gupta Fabrication Logo" />
+        <Link href="/" className="flex items-center space-x-3 absolute top-1 sm:top-0 md:top-auto">
+          <img src="/logon8.png" className="h-14 sm:h-16" alt="Gupta Fabrication Logo" />
         </Link>
 
-		<div className="flex text-xs items-end md:space-x-8 md:mt-0 font-sm text-white">
+		<div className="flex text-xs ml-auto items-end md:space-x-8 md:mt-0 font-sm text-white">
 			{!isOpen && <>
 				<Link
 					href="/products"
